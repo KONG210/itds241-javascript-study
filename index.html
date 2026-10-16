@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="อ่านสรุปและทำแบบทดสอบ ITDS241 แยก 3 บท บทละ 3 ชุด ชุดละ 30 ข้อ พร้อมเฉลยทันที">
+  <title>ITDS241 · JavaScript Study & Quiz</title>
+  <style>
+:root{--bg:#101827;--panel:#192337;--line:#334057;--muted:#9eaec4;--text:#f6f8fc;--yellow:#f8db60;--blue:#74b7ff;--green:#8ee1b4;--red:#ff9b9b;--mono:'DM Mono',monospace;--sans:'Noto Sans Thai','DM Sans',sans-serif}
+[hidden]{display:none!important}
+*{box-sizing:border-box}html{min-height:100%;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}button{font:inherit}button:focus-visible,a:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}.page-shell{max-width:1340px;margin:auto;min-height:100vh;padding:0 48px;display:flex;flex-direction:column;background:radial-gradient(circle at 80% 38%,rgba(73,114,178,.13),transparent 34%)}.topbar{height:90px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{color:var(--text);text-decoration:none;display:flex;align-items:center;gap:15px;font-family:var(--mono);font-weight:500;font-size:15px;letter-spacing:.02em}.brand-mark{color:var(--yellow);border:1px solid #758196;padding:8px 10px;font-size:13px}.brand-muted{color:var(--muted)}.topbar-tag{font:12px var(--mono);letter-spacing:.1em;color:var(--muted)}main{flex:1}.screen[hidden]{display:none!important}.intro{min-height:650px;display:grid;grid-template-columns:1fr 1fr;position:relative;align-items:center;padding:45px 0 100px}.intro-copy{position:relative;z-index:2}.eyebrow{display:flex;align-items:center;gap:14px;font:12px var(--mono);letter-spacing:.16em;color:var(--yellow);margin-bottom:30px}.eyebrow-line{width:27px;height:1px;background:var(--yellow)}h1{font-family:'DM Sans',var(--sans);font-size:clamp(70px,8.8vw,132px);letter-spacing:-.09em;line-height:.91;margin:0 0 32px;font-weight:700}h1 em{font-style:normal;color:var(--yellow)}.intro-lead{font-size:18px;line-height:1.9;max-width:520px;color:#c7d2e2;margin:0 0 32px}.intro-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap}.button{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:space-between;gap:40px;padding:15px 21px;font-weight:700;min-height:56px;transition:transform .18s,background .18s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--yellow);color:#121b2a}.button-primary:hover{background:#ffe989}.button span{font-family:var(--mono);font-size:22px;font-weight:400}.time-note{font-size:13px;color:var(--muted)}.intro-visual{height:480px;position:relative;display:flex;align-items:center;justify-content:center}.visual-orbit{position:absolute;border:1px solid rgba(151,181,221,.14);border-radius:50%;width:460px;height:460px}.orbit-two{width:340px;height:340px}.visual-card{position:absolute;border:1px solid #53647e;box-shadow:0 30px 70px #080e1c77}.visual-card-back{width:370px;height:270px;background:#25334b;transform:rotate(9deg) translate(40px,10px);padding:25px;color:#8fa0bb;font:13px var(--mono)}.visual-card-front{width:390px;background:#1e2c43;transform:rotate(-5deg) translate(-5px,-5px);padding:27px}.visual-card-kicker{font:11px var(--mono);letter-spacing:.08em;color:#90a1bb;border-bottom:1px solid #40526d;padding-bottom:20px}.visual-code{font:23px/1.9 var(--mono);margin:25px 0;color:#eef5ff}.code-purple{color:#d1b3ff}.code-blue{color:#89caff}.code-orange{color:#ffbd83}.visual-answer{border:1px solid #617492;padding:14px 18px;font:13px var(--mono);color:#c9d5e6}.visual-answer span{color:var(--yellow);margin-right:12px}.spark{position:absolute;color:var(--yellow);font:38px var(--mono)}.spark-one{top:37px;right:61px}.spark-two{bottom:29px;left:46px;font-size:28px}.topic-strip{grid-column:1/-1;position:absolute;bottom:25px;left:0;right:0;display:flex;align-items:center;gap:11px;flex-wrap:wrap}.topic-strip span{font-size:12px;color:var(--muted);margin-right:12px}.topic-strip div{font:11px var(--mono);color:#c2d0e2;border:1px solid #405068;padding:9px 12px}.quiz{padding:68px 0 90px}.quiz-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:72px}.quiz-sidebar{border-right:1px solid var(--line);padding-right:42px}.sidebar-label{font:11px var(--mono);letter-spacing:.15em;color:var(--muted)}.big-count{display:flex;align-items:baseline;gap:9px;margin:18px 0 24px;font:70px 'DM Sans',sans-serif;letter-spacing:-.08em}.count-slash{font-size:40px;color:#57677f}.count-total{font-size:28px;color:#9baec5}.progress-track,.score-bar{height:5px;background:#344156;overflow:hidden}.progress-fill,.score-bar>div{height:100%;width:0;background:var(--yellow);transition:width .3s}.sidebar-divider{height:1px;background:var(--line);margin:45px 0 35px}.sidebar-score{font:38px 'DM Sans',sans-serif;margin:13px 0}.sidebar-score span:last-child{font:15px var(--sans);color:var(--muted)}.sidebar-note{color:var(--muted);font-size:13px;line-height:1.8;margin-top:32px}.question-panel{max-width:750px}.question-topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;gap:15px}.topic-pill{background:#293a53;color:#a9d1ff;padding:7px 11px;font:11px var(--mono);letter-spacing:.07em}.question-number{color:var(--muted);font:12px var(--mono)}.question-panel h2{font-size:clamp(25px,3vw,38px);line-height:1.55;margin:0 0 12px;font-weight:700;letter-spacing:-.025em;white-space:pre-line}.question-hint{color:var(--muted);font-size:13px;margin:0 0 32px}.answers{display:grid;gap:11px}.answer{width:100%;display:flex;align-items:flex-start;text-align:left;gap:18px;background:#1c293e;color:var(--text);border:1px solid #3a4a62;padding:19px 20px;cursor:pointer;line-height:1.6;transition:border-color .16s,background .16s}.answer:hover:not(:disabled){border-color:#a9c6e4;background:#24354e}.answer:disabled{cursor:default}.answer-letter{flex:none;font:13px var(--mono);color:#9eafc8;border:1px solid #71829d;width:27px;height:27px;display:grid;place-items:center;margin-top:1px}.answer.correct{border-color:var(--green);background:#1e3a37}.answer.correct .answer-letter{border-color:var(--green);color:var(--green)}.answer.wrong{border-color:var(--red);background:#422c39}.answer.wrong .answer-letter{border-color:var(--red);color:var(--red)}.answer.faded{opacity:.55}.feedback{margin-top:22px;border-left:3px solid var(--green);background:#203542;padding:17px 21px;line-height:1.8;color:#dce7f3}.feedback.wrong{border-color:var(--red);background:#382c3b}.feedback strong{display:block;color:var(--green);margin-bottom:4px}.feedback.wrong strong{color:var(--red)}.question-actions{min-height:88px;padding-top:28px}.results{padding:90px 0}.results-grid{display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:center}.results h2{font:700 clamp(55px,7vw,90px) 'DM Sans',var(--sans);letter-spacing:-.08em;margin:0 0 22px}.title-dot{color:var(--yellow)}.results-lead{font-size:18px;color:#c3d0e1;line-height:1.8;margin:0 0 30px;max-width:530px}.score-card{background:#1e2b42;border:1px solid #485a74;padding:34px}.score-card-label{font:12px var(--mono);letter-spacing:.16em;color:var(--muted)}.score-value{font:700 90px 'DM Sans',sans-serif;letter-spacing:-.08em;margin-top:28px}.score-value small{font-size:25px;color:#91a3bd;letter-spacing:-.04em}.score-percent{font:15px var(--mono);color:var(--yellow);margin:8px 0 24px}.review-section{margin-top:90px;border-top:1px solid var(--line);padding-top:28px}.review-heading{display:flex;justify-content:space-between;align-items:baseline;gap:15px}.review-heading h3{font-size:23px;margin:0 0 21px}.review-heading span{font:12px var(--mono);color:var(--muted)}.review-list{display:grid;gap:10px}.review-item{background:#1b283c;border:1px solid #34455e;padding:20px 22px;line-height:1.7}.review-item .review-id{font:11px var(--mono);color:var(--yellow);margin-bottom:7px}.review-item p{margin:0 0 7px;font-weight:600}.review-item .review-answer{font-size:14px;color:#aee9c7}.review-empty{color:var(--muted);font-size:15px}footer{border-top:1px solid var(--line);padding:23px 0;display:flex;justify-content:space-between;gap:15px;color:#7f91ab;font:10px var(--mono);letter-spacing:.04em}
+@media(max-width:900px){.page-shell{padding:0 26px}.intro{grid-template-columns:1fr;gap:0;padding:65px 0 100px}.intro-visual{grid-row:2;height:390px}.topic-strip{bottom:8px}.quiz-layout{grid-template-columns:1fr;gap:38px}.quiz-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:0 0 30px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:10px}.quiz-sidebar .sidebar-label:first-child{grid-column:1}.big-count{grid-column:1;margin:0}.progress-track{grid-column:1/-1}.sidebar-divider,.sidebar-note{display:none}.quiz-sidebar .sidebar-label:nth-of-type(2){grid-column:2;grid-row:1}.sidebar-score{grid-column:2;grid-row:2;margin:0;text-align:right}.results-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.page-shell{padding:0 18px}.topbar{height:70px}.topbar-tag{font-size:9px}.brand{font-size:12px;gap:8px}.brand-mark{font-size:10px;padding:6px}.intro{padding-top:56px}h1{font-size:69px}.intro-lead{font-size:16px}.intro-visual{height:300px}.visual-orbit{width:300px;height:300px}.orbit-two{width:220px;height:220px}.visual-card-back{width:250px;height:190px}.visual-card-front{width:275px;padding:17px}.visual-card-kicker{font-size:9px}.visual-code{font-size:16px;margin:16px 0}.visual-answer{font-size:10px;padding:9px}.spark-one{right:8px}.spark-two{left:6px}.topic-strip{gap:7px}.topic-strip div{font-size:9px;padding:7px}.quiz{padding:40px 0 70px}.question-topline{margin-bottom:23px}.question-panel h2{font-size:23px}.answer{padding:15px 13px;gap:12px;font-size:14px}.results{padding:60px 0}.results h2{font-size:58px}.score-card{padding:26px}footer{flex-direction:column;line-height:1.5}}
+.chapter-heading{display:flex;justify-content:space-between;align-items:center;font:11px var(--mono);letter-spacing:.15em;color:var(--yellow);max-width:520px;margin:0 0 12px}.chapter-heading span{font:12px var(--sans);letter-spacing:0;color:var(--muted)}.chapter-list{display:grid;gap:9px;max-width:520px}.chapter-card{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 18px;border:1px solid #40516b;background:#1b293e;color:var(--text);cursor:pointer;transition:background .18s,border-color .18s,transform .18s}.chapter-card:hover{background:#293b55;border-color:var(--yellow);transform:translateX(3px)}.chapter-index{font:12px var(--mono);color:var(--yellow)}.chapter-name{display:block;font-size:15px;font-weight:700;line-height:1.35}.chapter-meta{display:block;color:var(--muted);font-size:11px;margin-top:3px}.chapter-arrow{font:22px var(--mono);color:var(--yellow)}.chapter-side-name{font:12px var(--mono);color:var(--yellow);letter-spacing:.06em;line-height:1.6;margin-bottom:34px}.result-actions{display:flex;gap:11px;flex-wrap:wrap}.button-outline{border:1px solid #71829d;background:transparent;color:var(--text);gap:8px}.button-outline:hover{background:#293b55}.intro{min-height:760px;padding-bottom:85px}.intro-visual{align-self:start;margin-top:105px}
+@media(max-width:900px){.intro-visual{margin-top:0}.chapter-side-name{grid-column:1/-1;margin-bottom:8px}}
+@media(max-width:560px){.intro{padding-bottom:100px}.chapter-card{padding:14px 12px;grid-template-columns:30px 1fr auto;gap:10px}.chapter-name{font-size:13px}.chapter-meta{font-size:10px}.chapter-heading{margin-top:8px}}
+@media(max-width:900px){.quiz-sidebar .sidebar-label.progress-label{grid-column:1;grid-row:2}.quiz-sidebar .sidebar-label.score-label{grid-column:2;grid-row:2;text-align:right}.quiz-sidebar .big-count{grid-column:1;grid-row:3}.quiz-sidebar .sidebar-score{grid-column:2;grid-row:3}.quiz-sidebar .progress-track{grid-column:1/-1;grid-row:4}}
+.sets{padding:58px 0 110px;max-width:860px}.text-back{background:none;border:0;color:var(--muted);padding:0;font:13px var(--sans);cursor:pointer;margin-bottom:55px}.text-back:hover{color:var(--yellow)}.sets h2{font:700 clamp(44px,6vw,78px) 'DM Sans',var(--sans);letter-spacing:-.065em;line-height:1.1;margin:0 0 18px}.sets-lead{font-size:17px;line-height:1.8;color:#c4d1e1;margin:0 0 35px}.sets-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.set-card{background:#1d2a40;border:1px solid #40516b;color:var(--text);text-align:left;cursor:pointer;min-height:195px;padding:23px;display:flex;flex-direction:column;justify-content:space-between;transition:background .18s,border-color .18s,transform .18s}.set-card:hover{background:#293b55;border-color:var(--yellow);transform:translateY(-3px)}.set-card-top{font:12px var(--mono);color:var(--yellow)}.set-card-title{display:block;font-size:23px;font-weight:700;margin-bottom:5px}.set-card-meta{display:block;font-size:12px;color:var(--muted)}.set-card-arrow{font:26px var(--mono);color:var(--yellow);align-self:flex-end}.palette-heading{margin:27px 0 12px}.question-palette{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.palette-button{height:33px;min-width:0;padding:0;border:1px solid #53657f;color:#b8c6da;background:transparent;font:11px var(--mono);cursor:pointer}.palette-button:hover{border-color:var(--yellow);color:var(--yellow)}.palette-button.answered{background:#294b50;border-color:#5b9b92;color:#d4fff0}.palette-button.current{outline:2px solid var(--yellow);outline-offset:1px}.answer.selected{border-color:var(--yellow);background:#3b3d43}.answer.selected .answer-letter{border-color:var(--yellow);color:var(--yellow)}.question-actions{display:flex;justify-content:space-between;gap:12px;min-height:0;padding:29px 0}.button:disabled{cursor:not-allowed;opacity:.45;transform:none}.submit-row{border-top:1px solid var(--line);padding-top:23px;display:flex;justify-content:space-between;align-items:center;gap:20px}.submit-row span{font-size:13px;color:var(--muted)}.review-user-answer{font-size:13px;color:var(--red);margin:6px 0}.review-answer{margin-top:5px}.quiz-sidebar .sidebar-note{margin-bottom:0}
+@media(max-width:900px){.sets-list{grid-template-columns:repeat(3,minmax(0,1fr))}.quiz-sidebar .palette-heading,.quiz-sidebar .question-palette{grid-column:1/-1}.quiz-sidebar .palette-heading{grid-row:5;margin:13px 0 0}.quiz-sidebar .question-palette{grid-row:6;grid-template-columns:repeat(10,minmax(0,1fr))}.quiz-sidebar .sidebar-note{display:none}}
+@media(max-width:600px){.sets{padding:42px 0 75px}.sets-list{grid-template-columns:1fr}.set-card{min-height:125px;padding:18px;display:grid;grid-template-columns:1fr auto}.set-card-top{grid-column:1/-1}.set-card-title{font-size:20px}.set-card-arrow{grid-column:2;grid-row:2;align-self:center}.quiz-sidebar .question-palette{grid-template-columns:repeat(6,minmax(0,1fr))}.question-actions{flex-wrap:wrap}.question-actions .button{flex:1;gap:10px;padding:12px;font-size:13px;min-height:49px}.submit-row{flex-direction:column;align-items:stretch}.submit-row .button{width:100%}.result-actions{display:grid}.result-actions .button{width:100%}}
+.review-meaning{font-size:13px;color:#bed5f5;margin:6px 0 10px}.review-reason{font-size:13px;color:#c2d0e0;margin-top:4px}.review-answer{font-weight:600}
+.feedback p{margin:7px 0 0}.feedback p:last-child{margin-bottom:0}.palette-button.answered-correct{background:#1e3a37;border-color:var(--green);color:var(--green)}.palette-button.answered-wrong{background:#422c39;border-color:var(--red);color:var(--red)}
+.chapter-card{grid-template-columns:36px minmax(0,1fr);cursor:default}.chapter-card-actions{grid-column:2;display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.chapter-action{border:1px solid #697b96;background:transparent;color:#e8f0fb;padding:7px 11px;font-size:12px;font-weight:700;cursor:pointer}.chapter-action:hover{border-color:var(--yellow);color:var(--yellow)}.chapter-action-quiz{background:var(--yellow);border-color:var(--yellow);color:#101827}.chapter-action-quiz:hover{background:#ffe989;color:#101827}
+.reading{padding:52px 0 100px}.reading-header{max-width:900px;padding-bottom:42px;border-bottom:1px solid var(--line)}.reading-header .text-back{margin-bottom:42px}.reading-header .eyebrow{margin-bottom:20px}.reading-header h2{font:700 clamp(44px,6.5vw,82px) 'DM Sans',var(--sans);letter-spacing:-.07em;line-height:1.1;margin:0 0 18px}.reading-header p{font-size:18px;line-height:1.8;color:#c5d2e3;max-width:760px;margin:0 0 28px}.reading-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.reading-actions>span{font-size:12px;line-height:1.6;color:var(--muted)}.reading-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:58px;padding-top:44px}.reading-nav{align-self:start;position:sticky;top:24px;max-height:calc(100vh - 48px);overflow:auto}.reading-nav .sidebar-label{margin-bottom:18px;color:var(--yellow)}#reading-toc{display:grid;gap:4px}.reading-toc-link{border:0;border-left:2px solid #3e506b;background:transparent;color:#b8c9df;text-align:left;padding:10px 12px;line-height:1.5;font-size:12px;cursor:pointer}.reading-toc-link:hover,.reading-toc-link:focus-visible{border-left-color:var(--yellow);color:var(--yellow);background:#1a2940}.reading-content{min-width:0;max-width:850px}.reading-section{scroll-margin-top:24px;background:#19263a;border:1px solid #344761;padding:31px 34px;margin-bottom:18px}.reading-section-meta{font:11px var(--mono);letter-spacing:.08em;color:var(--yellow);margin-bottom:16px}.reading-section h3{font-size:clamp(22px,2.5vw,30px);line-height:1.4;margin:0 0 17px}.reading-section p,.reading-section li{font-size:15px;line-height:1.95;color:#d0dcec}.reading-section p{margin:0 0 13px}.reading-section ul{padding-left:23px;margin:9px 0 20px}.reading-section li{padding-left:4px;margin:6px 0}.reading-code-caption{font:11px var(--mono);color:#a9bfd9;margin:24px 0 8px;letter-spacing:.04em}.reading-section pre{margin:0 0 18px;overflow:auto;background:#0d1522;border:1px solid #33435b;padding:20px;color:#d2e9ff;font:13px/1.7 var(--mono);tab-size:2}.reading-section code{white-space:pre}.reading-tip{border-left:3px solid var(--yellow);background:#283344;color:#f5e9ac;font-size:14px;line-height:1.8;padding:14px 17px;margin-top:19px}.reading-recap{margin-top:38px;background:#253047;border:1px solid #65738a;padding:32px 35px}.reading-recap .eyebrow{margin-bottom:14px}.reading-recap h3{font-size:26px;margin:0 0 15px}.reading-recap ol{padding-left:23px;margin:0 0 27px}.reading-recap li{padding:6px 0;color:#e0e9f5;line-height:1.7;font-size:15px}.sets-reading-link{display:inline-block;border:0;background:none;color:var(--yellow);padding:0;margin:0 0 28px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:4px}.sets-reading-link:hover{color:#ffe989}
+@media(max-width:900px){.reading-layout{grid-template-columns:1fr;gap:25px}.reading-nav{position:static;max-height:none}.reading-nav .sidebar-label{margin-bottom:9px}#reading-toc{display:flex;overflow-x:auto;gap:6px;padding-bottom:7px}.reading-toc-link{flex:none;max-width:240px;border-left:0;border-bottom:2px solid #3e506b}.reading-toc-link:hover,.reading-toc-link:focus-visible{border-left:0;border-bottom-color:var(--yellow)}}
+@media(max-width:600px){.chapter-card{grid-template-columns:28px minmax(0,1fr)}.reading{padding:36px 0 70px}.reading-header .text-back{margin-bottom:29px}.reading-header p{font-size:16px}.reading-actions .button{width:100%}.reading-layout{padding-top:26px}.reading-section{padding:23px 20px}.reading-section p,.reading-section li{font-size:14px}.reading-section pre{padding:15px;font-size:12px}.reading-recap{padding:24px 21px}}
+
+</style>
+  
+  
+  
+  
+  
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="กลับไปหน้าเริ่มต้น" id="brand-link"><span class="brand-mark">{ JS }</span><span>ITDS241 <span class="brand-muted">/ STUDY</span></span></a>
+      <span class="topbar-tag">3 CHAPTERS · READ + PRACTICE</span>
+    </header>
+
+    <main>
+      <section class="screen intro active" id="intro-screen" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> READ · PRACTICE · REVIEW</div>
+          <h1 id="intro-title">JavaScript<br><em>Study.</em></h1>
+          <p class="intro-lead">อ่านสรุปทีละบทจากสไลด์ แล้วฝึกด้วยข้อสอบ 3 ชุดต่อบท กดตอบแล้วรู้ผลพร้อมคำอธิบายทันที</p>
+          <div class="chapter-heading">CHOOSE A CHAPTER <span>เลือกบทเรียน</span></div>
+          <div class="chapter-list" id="chapter-list"></div>
+        </div>
+        <div class="intro-visual" aria-hidden="true">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-card visual-card-back"><span>const ready = true;</span></div>
+          <div class="visual-card visual-card-front"><div class="visual-card-kicker">PICK A CHAPTER · START LEARNING</div><div class="visual-code"><span class="code-purple">if</span> (you.<span class="code-blue">know</span>(js)) {<br>&nbsp;&nbsp;score<span class="code-orange">++</span>;<br>}</div><div class="visual-answer"><span>○</span> Let’s find out</div></div>
+          <span class="spark spark-one">✦</span><span class="spark spark-two">✳</span>
+        </div>
+        <div class="topic-strip"><span>ครอบคลุม</span><div>JavaScript Part 1</div><div>ECMAScript Versions</div><div>JavaScript Part 2</div></div>
+      </section>
+
+      <section class="screen reading" id="reading-screen" aria-labelledby="reading-title" hidden>
+        <div class="reading-header">
+          <button class="text-back" id="reading-back-button" type="button">← กลับไปเลือกบท</button>
+          <div class="eyebrow"><span class="eyebrow-line"></span> CHAPTER NOTES</div>
+          <h2 id="reading-title"></h2>
+          <p id="reading-lead"></p>
+          <div class="reading-actions"><button class="button button-primary" id="reading-quiz-button" type="button">ไปทำข้อสอบบทนี้ <span aria-hidden="true">↗</span></button><span id="reading-source"></span></div>
+        </div>
+        <div class="reading-layout">
+          <nav class="reading-nav" aria-label="หัวข้อในบท"><div class="sidebar-label">ในบทนี้</div><div id="reading-toc"></div></nav>
+          <div class="reading-content"><div id="reading-sections"></div><section class="reading-recap" aria-labelledby="recap-title"><div class="eyebrow"><span class="eyebrow-line"></span> QUICK RECAP</div><h3 id="recap-title">จำให้ได้ก่อนทำข้อสอบ</h3><ol id="reading-recap-list"></ol><button class="button button-primary" id="reading-bottom-quiz-button" type="button">เริ่มทำข้อสอบบทนี้ <span aria-hidden="true">↗</span></button></section></div>
+        </div>
+      </section>
+
+      <section class="screen sets" id="sets-screen" aria-labelledby="sets-title" hidden>
+        <button class="text-back" id="back-chapters-button" type="button">← กลับไปเลือกบท</button>
+        <div class="eyebrow"><span class="eyebrow-line"></span> CHOOSE A SET</div>
+        <h2 id="sets-title"></h2>
+        <p class="sets-lead">แต่ละชุดมี 30 ข้อ กดตอบแล้วรู้ผลทันที เมื่อทำครบจึงดูสรุปคะแนน</p>
+        <button class="sets-reading-link" id="sets-reading-button" type="button">อ่านสรุปบทนี้ก่อน →</button>
+        <div class="sets-list" id="sets-list"></div>
+      </section>
+
+      <section class="screen quiz" id="quiz-screen" aria-labelledby="question-text" hidden>
+        <div class="quiz-layout">
+          <aside class="quiz-sidebar">
+            <div class="chapter-side-name" id="chapter-side-name"></div>
+            <div class="sidebar-label progress-label">YOUR PROGRESS</div>
+            <div class="big-count"><span id="current-count">01</span><span class="count-slash">/</span><span class="count-total" id="count-total">30</span></div>
+            <div class="progress-track" role="progressbar" id="progress-track" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0" aria-label="ความคืบหน้า"><div class="progress-fill" id="progress-fill"></div></div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-label score-label">ตอบแล้ว</div>
+            <div class="sidebar-score"><span id="answered-count">0</span> <span>ข้อ</span></div>
+            <p class="sidebar-note">กดเลขข้อเพื่อย้อนดูได้ คำตอบจะถูกบันทึกเมื่อกดเลือกครั้งแรก</p>
+            <div class="sidebar-label palette-heading">เลือกข้อ</div>
+            <div class="question-palette" id="question-palette" aria-label="ไปยังข้อสอบ"></div>
+          </aside>
+          <div class="question-panel">
+            <div class="question-topline"><span class="topic-pill" id="question-topic">BASICS</span><span class="question-number" id="question-number">ข้อ 1 จาก 30</span></div>
+            <h2 id="question-text"></h2>
+            <p class="question-hint">เลือกคำตอบที่ถูกต้องที่สุด 1 ข้อ · ระบบจะแสดงผลทันทีหลังเลือก</p>
+            <div class="answers" id="answer-list" role="group" aria-labelledby="question-text"></div>
+            <div class="feedback" id="answer-feedback" role="status" aria-live="polite" hidden></div>
+            <div class="question-actions"><button class="button button-outline" id="prev-button" type="button">← ข้อก่อนหน้า</button><button class="button button-outline" id="next-button" type="button">ข้อถัดไป →</button></div>
+            <div class="submit-row"><span id="submit-hint" role="status" aria-live="polite"></span><button class="button button-primary" id="submit-button" type="button" disabled>ดูสรุปคะแนน <span aria-hidden="true">✓</span></button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen results" id="results-screen" aria-labelledby="results-title" hidden>
+        <div class="results-grid">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> COMPLETED · <span id="result-chapter"></span></div><h2 id="results-title">ตรวจเสร็จแล้ว<span class="title-dot">.</span></h2><p class="results-lead" id="result-message"></p><div class="result-actions"><button class="button button-primary" id="retry-wrong-button" type="button">ทำเฉพาะข้อที่ผิด <span aria-hidden="true">↗</span></button><button class="button button-outline" id="restart-button" type="button">ทำชุดนี้ใหม่</button><button class="button button-outline" id="sets-button" type="button">เลือกชุดอื่น</button><button class="button button-outline" id="results-reading-button" type="button">อ่านสรุปบทนี้</button></div></div>
+          <div class="score-card"><div class="score-card-label">YOUR SCORE</div><div class="score-value"><span id="final-score">0</span><small>/ <span id="final-total">30</span></small></div><div class="score-percent" id="score-percent">0%</div><div class="score-bar"><div id="score-bar-fill"></div></div></div>
+        </div>
+        <div class="review-section" id="review-section"><div class="review-heading"><h3>ข้อที่ควรทบทวน</h3><span id="review-count"></span></div><div id="review-list" class="review-list"></div></div>
+      </section>
+    </main>
+
+    <footer><span>ITDS241 · WEB TECHNOLOGIES AND APPLICATIONS</span><span>อ้างอิงเนื้อหา: Lecture 06, ECMAScript Version, Lecture 07</span></footer>
+  </div>
+<script>
+const questions = [
+  { topic: "BASICS", text: "JavaScript ถูกออกแบบมาเพื่อเพิ่มสิ่งใดให้หน้า HTML?", options: ["โครงสร้างเนื้อหา", "การโต้ตอบกับผู้ใช้", "ขนาดไฟล์ภาพ", "ชื่อโดเมน"], answer: 1, explanation: "สไลด์อธิบายว่า JavaScript เพิ่ม interactivity ให้หน้า HTML เช่น ตอบสนองต่อเหตุการณ์และเปลี่ยนข้อมูลบนหน้าเว็บ" },
+  { topic: "BASICS", text: "ถ้าต้องการให้หน้าเว็บตอบสนองเมื่อผู้ใช้คลิกปุ่ม คุณกำลังใช้ความสามารถใดของ JavaScript?", options: ["การตอบสนองต่อ events", "การกำหนดโครงสร้าง HTML", "การบีบอัดภาพ", "การกำหนดชื่อ CSS class"], answer: 0, explanation: "JavaScript สามารถตอบสนองต่อ events เช่น การคลิก แล้วสั่งให้โค้ดทำงานต่อได้" },
+  { topic: "HOW TO USE JS", text: "หากเขียน JavaScript ภายในไฟล์ HTML โดยตรง ควรวางโค้ดไว้ระหว่างแท็กใด?", options: ["<style> ... </style>", "<script> ... <\/script>", "<title> ... </title>", "<section> ... </section>"], answer: 1, explanation: "การใส่ JavaScript ใน HTML ใช้แท็ก <script> ซึ่งสไลด์ระบุว่าวางใน <head> หรือ <body> ได้" },
+  { topic: "HOW TO USE JS", text: "คำสั่งใดเชื่อมไฟล์ myScript.js เข้ากับหน้า HTML?", options: ["<script src=\"myScript.js\"><\/script>", "<link href=\"myScript.js\">", "<script>myScript.js<\/script>", "<js file=\"myScript.js\">"], answer: 0, explanation: "ใช้แอตทริบิวต์ src ในแท็ก <script> เพื่อโหลดไฟล์ .js ภายนอก และไม่ต้องใส่แท็ก <script> ซ้ำในไฟล์ .js" },
+  { topic: "VARIABLES", text: "คำสั่งใดแสดงค่าของตัวแปร fullinfo ใน console?", options: ["print(fullinfo)", "console.log(fullinfo)", "display(fullinfo)", "alert.console(fullinfo)"], answer: 1, explanation: "console.log() ใช้เขียนค่าของนิพจน์ออกไปที่ console ตามตัวอย่างในสไลด์" },
+  { topic: "VARIABLES", text: "โค้ด var firstName = \"Wud\"; ทำอะไร?", options: ["ประกาศตัวแปรและกำหนดค่าเริ่มต้น", "เปรียบเทียบค่า 2 ค่า", "แสดงผลบนหน้าเว็บ", "สร้างฟังก์ชัน"], answer: 0, explanation: "var เป็นคำประกาศตัวแปร ส่วน = กำหนดค่าเริ่มต้น \"Wud\" ให้ firstName" },
+  { topic: "VARIABLES", text: "ในคำสั่ง number1 = 10 เครื่องหมาย = มีความหมายว่าอะไร?", options: ["เท่ากันทางคณิตศาสตร์", "กำหนดค่าทางขวาให้ตัวแปรทางซ้าย", "ตรวจสอบชนิดข้อมูล", "นำค่า 2 ตัวมาต่อกัน"], answer: 1, explanation: "= ใน JavaScript คือ assignment operator ใช้กำหนดค่า ไม่ใช่เครื่องหมายแสดงความเท่ากัน" },
+  { topic: "VARIABLES", text: "เมื่อประกาศ let x = 2; แล้วประกาศ let x = 5; อีกครั้งในบล็อกเดียวกัน จะเกิดอะไรขึ้น?", options: ["ค่า x จะเป็น 5 เสมอ", "ประกาศซ้ำไม่ได้", "x กลายเป็น string", "x ถูกลบออก"], answer: 1, explanation: "let สามารถเปลี่ยนค่าภายหลังได้ แต่ไม่สามารถประกาศชื่อเดิมซ้ำในบล็อกเดียวกัน" },
+  { topic: "VARIABLES", text: "ข้อใดถูกต้องเกี่ยวกับ const?", options: ["เปลี่ยนค่าใหม่ได้ทุกเวลา", "ประกาศซ้ำในบล็อกเดิมได้", "ไม่สามารถกำหนดค่าใหม่ให้ตัวแปรนั้น", "ใช้ได้เฉพาะ string"], answer: 2, explanation: "สไลด์ใช้ const สำหรับค่าคงที่ โดยตัวแปรที่ประกาศด้วย const ไม่สามารถกำหนดค่าใหม่หรือประกาศซ้ำได้" },
+  { topic: "DATA TYPES", text: "ตัวแปรที่ประกาศแล้วแต่ยังไม่ได้กำหนดค่า มีค่าเป็นอะไร?", options: ["null", "false", "undefined", "0"], answer: 2, explanation: "undefined คือค่าของตัวแปรที่ยังไม่ได้รับการกำหนดค่า ส่วน null ใช้แทนการไม่มีค่าโดยตั้งใจ" },
+  { topic: "DATA TYPES", text: "ผลของ typeof 10 คือข้อใด?", options: ["\"number\"", "\"integer\"", "\"string\"", "\"boolean\""], answer: 0, explanation: "10 เป็นข้อมูลชนิด Number และ typeof จะคืนชื่อชนิดข้อมูลเป็น \"number\"" },
+  { topic: "DATA TYPES", text: "จากโค้ด let value = 10; value = \"hello\"; ข้อใดอธิบายได้ถูกต้อง?", options: ["ทำไม่ได้ เพราะตัวแปรเปลี่ยนชนิดไม่ได้", "ทำได้ เพราะตัวแปร JavaScript เก็บค่าต่างชนิดในช่วงเวลาต่างกันได้", "ทำได้เฉพาะเมื่อใช้ const", "value จะเป็น null"], answer: 1, explanation: "ตัวอย่างในสไลด์เปลี่ยนตัวแปรจากตัวเลขเป็นข้อความระหว่างโปรแกรมทำงาน เพื่อแสดงการกำหนดชนิดแบบยืดหยุ่น" },
+  { topic: "OBJECTS", text: "กำหนด let a = {age: 30}; let b = a; แล้วสั่ง a.age = 40; ค่าของ b.age เป็นเท่าใด?", options: ["30", "40", "undefined", "null"], answer: 1, explanation: "a และ b อ้างถึง object เดียวกัน เมื่อแก้ property ผ่าน a จึงเห็นค่าใหม่ผ่าน b ด้วย เหมือนตัวอย่าง person กับ candidate ในสไลด์" },
+  { topic: "OBJECTS", text: "ถ้า object มี property ชื่อ \"parking permit\" ซึ่งมีช่องว่าง ต้องเข้าถึงอย่างไร?", options: ["person.parking permit", "person[\"parking permit\"]", "person->parking permit", "person(parking permit)"], answer: 1, explanation: "ชื่อ property ที่มีช่องว่างใช้ bracket notation เช่น person[\"parking permit\"]" },
+  { topic: "ARRAYS", text: "กำหนด let items = [\"A\", \"B\", \"C\"]; ค่า items[0] คืออะไร?", options: ["\"A\"", "\"B\"", "\"C\"", "0"], answer: 0, explanation: "Array ในตัวอย่างของสไลด์เข้าถึงสมาชิกด้วย index โดยสมาชิกตัวแรกอยู่ที่ index 0" },
+  { topic: "ARRAYS", text: "เมธอดใดเพิ่มสมาชิกหนึ่งตัวไปท้าย array?", options: ["pop()", "push()", "indexOf()", "forEach()"], answer: 1, explanation: "push() เพิ่มสมาชิกที่ท้าย array ส่วน pop() นำสมาชิกตัวท้ายออก" },
+  { topic: "ARRAYS", text: "arr.map(function) ทำหน้าที่ใด?", options: ["ลบสมาชิกทุกตัว", "สร้าง array ใหม่จากผลการเรียกฟังก์ชันกับสมาชิกแต่ละตัว", "แสดงเฉพาะสมาชิกตัวแรก", "เรียง array จากมากไปน้อย"], answer: 1, explanation: "map() จะสร้าง array ใหม่จากผลลัพธ์ของฟังก์ชันที่ทำกับสมาชิกแต่ละตัว" },
+  { topic: "STRINGS", text: "กำหนด let str = \"Hello World\"; ค่า str.length คือเท่าใด?", options: ["10", "11", "12", "undefined"], answer: 1, explanation: "\"Hello World\" มี 11 ตัวอักษรเมื่อรวมช่องว่าง และ property length ให้จำนวนตัวอักษร" },
+  { topic: "OPERATORS", text: "5 % 3 มีค่าเท่าใด?", options: ["1", "2", "3", "5"], answer: 1, explanation: "% คือ remainder operator หาค่าเศษจากการหาร ดังนั้น 5 หาร 3 เหลือเศษ 2" },
+  { topic: "OPERATORS", text: "นิพจน์ 2 + 3 * 4 ได้ผลลัพธ์เท่าใด?", options: ["20", "14", "24", "9"], answer: 1, explanation: "ลำดับความสำคัญให้คูณก่อนบวก: 3 * 4 = 12 แล้ว 2 + 12 = 14" },
+  { topic: "OPERATORS", text: "ถ้า x = 5; แล้วสั่ง x += 3; ค่า x เป็นเท่าใด?", options: ["3", "5", "8", "15"], answer: 2, explanation: "x += 3 มีความหมายเดียวกับ x = x + 3 ดังนั้น x เปลี่ยนจาก 5 เป็น 8" },
+  { topic: "OPERATORS", text: "นิพจน์ \"1\" === 1 ให้ค่าใด?", options: ["true เพราะค่าที่เห็นเหมือนกัน", "false เพราะชนิดข้อมูลต่างกัน", "1", "undefined"], answer: 1, explanation: "=== เปรียบเทียบทั้งชนิดและค่า ข้อความ \"1\" กับตัวเลข 1 จึงไม่เท่ากันแบบ strict" },
+  { topic: "OPERATORS", text: "true && false มีค่าอะไร?", options: ["true", "false", "null", "undefined"], answer: 1, explanation: "Logical AND (&&) เป็น true เฉพาะเมื่อทั้งสองด้านเป็น true" },
+  { topic: "DECISIONS", text: "กำหนด num1 = 1 และ num2 = 3; ผลของ num1 > num2 ? num1 : num2 คืออะไร?", options: ["1", "3", "true", "false"], answer: 1, explanation: "เงื่อนไข 1 > 3 เป็น false จึงเลือกค่าหลังเครื่องหมาย : คือ num2 ซึ่งเท่ากับ 3" },
+  { topic: "DECISIONS", text: "ในตัวอย่าง if-else-if ของสไลด์ หาก mark = 75 จะได้เกรดใด?", options: ["A", "B", "C", "D"], answer: 1, explanation: "ช่วง 70 ≤ mark < 80 ในตัวอย่างกำหนดให้ grade = \"B\"" },
+  { topic: "DECISIONS", text: "ใน switch คำสั่ง break หลัง case มีหน้าที่หลักอะไร?", options: ["เริ่ม switch ใหม่", "ออกจาก switch หลังทำ case นั้น", "ทำให้ทุก case ทำงาน", "เปลี่ยนค่าของ expression"], answer: 1, explanation: "break ยุติการทำงานของ switch เพื่อไม่ให้ไหลต่อไปยัง case ถัดไป" },
+  { topic: "LOOPS", text: "ข้อใดต่างกันระหว่าง while กับ do-while?", options: ["while ทำงานอย่างน้อยหนึ่งครั้งเสมอ", "do-while ทำงานอย่างน้อยหนึ่งครั้งเสมอ", "ทั้งสองไม่ตรวจเงื่อนไข", "do-while ใช้ได้กับ array เท่านั้น"], answer: 1, explanation: "do-while ทำบล็อกคำสั่งก่อนตรวจเงื่อนไข จึงทำอย่างน้อย 1 ครั้ง ส่วน while อาจไม่ทำเลย" },
+  { topic: "LOOPS", text: "for (let i = 0; i < 3; i++) จะให้ค่า i ภายในลูปเป็นลำดับใด?", options: ["0, 1, 2", "1, 2, 3", "0, 1, 2, 3", "3, 2, 1"], answer: 0, explanation: "เริ่มที่ 0 และทำต่อเมื่อ i < 3 จึงได้ 0, 1, 2 ก่อน i เพิ่มเป็น 3 แล้วหยุด" },
+  { topic: "LOOPS", text: "Sentinel-controlled loop หยุดเมื่อใด?", options: ["ทำครบจำนวนรอบที่กำหนดแน่นอน", "พบค่า sentinel ที่ใช้เป็นสัญญาณหยุด", "สมาชิก array หมดเสมอ", "เจอ operator +"], answer: 1, explanation: "ลูปชนิดนี้หยุดเมื่อพบค่า sentinel จำนวนรอบจึงอาจไม่ทราบล่วงหน้า" },
+  { topic: "TIC TAC TOE", text: "ในตัวอย่าง Tic Tac Toe หากคลิกช่องที่มี X หรือ O อยู่แล้ว ฟังก์ชัน handleCellClick ควรทำอย่างไร?", options: ["เขียนทับด้วยผู้เล่นปัจจุบัน", "ข้ามการคลิกครั้งนั้น", "เริ่มเกมใหม่ทันที", "ประกาศผู้ชนะทันที"], answer: 1, explanation: "สไลด์ตรวจว่า gameState ของช่องไม่ว่างหรือเกมไม่ active แล้ว return เพื่อไม่ให้เดินซ้ำหรือเดินหลังเกมจบ" }
+];
+
+
+const quizItem = (topic, text, options, answer, explanation) => ({ topic, text, options, answer, explanation });
+
+const ecmaQuestions = [
+  quizItem("ECMASCRIPT", "ECMAScript (ES) เกี่ยวข้องกับ JavaScript อย่างไร?", ["เป็นชื่อเว็บเบราว์เซอร์", "เป็นมาตรฐานที่ JavaScript นำไปใช้งาน", "เป็นไลบรารี CSS", "เป็นภาษาสำหรับฐานข้อมูลเท่านั้น"], 1, "สไลด์อธิบายว่า ES เป็นมาตรฐานโดย Ecma International และ JavaScript เป็นการนำ ES ไปใช้งานที่แพร่หลาย"),
+  quizItem("VERSIONS", "ES6 มีชื่อทางการตามปีว่าอะไร?", ["ES2011", "ES2015", "ES2018", "ES2020"], 1, "ตารางเวอร์ชันในสไลด์ระบุ ES6 = ES2015"),
+  quizItem("ES2015 · PROMISE", "สถานะเริ่มต้นของ Promise คืออะไร?", ["fulfilled", "rejected", "pending", "finished"], 2, "Promise เริ่มต้นที่ pending ก่อนจะเปลี่ยนเป็น fulfilled หรือ rejected"),
+  quizItem("ES2015 · PROMISE", "ใน Promise การเรียก resolve(value) หมายถึงอะไร?", ["งานสำเร็จพร้อมผลลัพธ์ value", "งานล้มเหลวพร้อม error", "ลบ Promise", "เริ่มงานใหม่อัตโนมัติ"], 0, "resolve(value) ใช้แจ้งว่างานเสร็จสำเร็จ ส่วน reject(error) แจ้งความล้มเหลว"),
+  quizItem("ES2015 · PROMISE", "เมธอดใดใช้รับผลเมื่อ Promise สำเร็จ?", [".then()", ".repeat()", ".flat()", ".padStart()"], 0, "ฟังก์ชันตัวแรกที่ส่งให้ .then() จะทำงานเมื่อ Promise ถูก resolve และได้รับผลลัพธ์"),
+  quizItem("ES2015 · TEMPLATE", "Template literal ใช้สัญลักษณ์ใดครอบข้อความ?", ["เครื่องหมายอัญประกาศเดี่ยว ' '", "backtick ` `", "วงเล็บ ( )", "วงเล็บปีกกา { }"], 1, "Template literal ใช้ backtick และแทรกนิพจน์ในข้อความด้วย ${...}"),
+  quizItem("ES2015 · SPREAD", "ถ้า a = [1, 2] ผลของ [...a, 3] คืออะไร?", ["[[1, 2], 3]", "[1, 2, 3]", "[3, 1, 2]", "[1, 2]"], 1, "spread operator (...) ขยายสมาชิกของ a ออกมา แล้วจึงต่อด้วย 3"),
+  quizItem("ES2015 · DESTRUCTURING", "กำหนด let arr = [1, 2]; let [one, two] = arr; ค่า two คือเท่าใด?", ["1", "2", "undefined", "[1, 2]"], 1, "Array destructuring ดึงค่าสมาชิกตามตำแหน่ง one จึงเป็น 1 และ two เป็น 2"),
+  quizItem("ES2015 · LOOPS", "for...of ใช้ทำอะไรในตัวอย่างของสไลด์?", ["วนอ่านค่าจากสิ่งที่วนซ้ำได้ เช่น array", "สร้าง Promise", "เปลี่ยน object เป็น JSON", "หยุดฟังก์ชันทุกครั้ง"], 0, "for...of วนผ่าน iterable เช่น array และใช้ break หรือ continue ได้"),
+  quizItem("ES2015 · MAP", "ข้อใดเป็นข้อแตกต่างที่สไลด์ระบุระหว่าง Map กับ WeakMap?", ["WeakMap ใช้ string เป็น key ได้เท่านั้น", "Map ใช้ค่าได้หลายชนิดเป็น key แต่ WeakMap จำกัดชนิด key", "Map ไม่มี size", "WeakMap วน keys() ได้เหมือน Map"], 1, "สไลด์เปรียบเทียบว่า Map ใช้ค่าใดก็ได้เป็น key ขณะที่ WeakMap จำกัด key และไม่มีการวนดูสมาชิกแบบ Map"),
+  quizItem("ES2015 · REST", "function sum(...args) ใช้ ... ในความหมายใด?", ["แปลงเป็น Promise", "รับอาร์กิวเมนต์ได้ไม่จำกัดจำนวนเป็น rest parameter", "คูณค่าทั้งหมด", "ตัดอาร์กิวเมนต์ตัวท้าย"], 1, "rest parameter รวบอาร์กิวเมนต์จำนวนไม่แน่นอนให้ฟังก์ชัน"),
+  quizItem("ES2016", "[10, 30, 25].includes(30) คืนค่าอะไร?", ["-1", "0", "true", "false"], 2, "includes() ตรวจว่ามีค่านั้นใน array หรือไม่ และคืนค่า Boolean"),
+  quizItem("ES2016", "ตัวดำเนินการยกกำลังที่สไลด์จัดอยู่ใน ES2016 คืออะไร?", ["**", "%%", "//", "^^"], 0, "ES2016 เพิ่ม exponentiation operator โดยเขียน **"),
+  quizItem("ES2017", "String.padStart() ทำอะไร?", ["เติมข้อความทางต้นสตริงจนถึงความยาวที่กำหนด", "ลบช่องว่างท้ายสตริง", "ตัดตัวแรกของสตริง", "แปลงสตริงเป็นตัวเลข"], 0, "padStart() เติมข้อความด้านหน้าให้ได้ความยาวเป้าหมาย ส่วน padEnd() เติมด้านท้าย"),
+  quizItem("ES2017", "Object.entries({a: 1}) คืนข้อมูลในรูปแบบใด?", ["[1]", "[[\"a\", 1]]", "{a: 1}", "\"a:1\""], 1, "Object.entries() คืน array ของคู่ key-value จาก property ของ object"),
+  quizItem("ES2017 · ASYNC", "ฟังก์ชันที่ใส่ async ไว้ข้างหน้า จะคืนค่าในรูปของอะไร?", ["Promise", "Map", "Set", "String เสมอ"], 0, "สไลด์ระบุว่า async function จะคืน Promise เสมอ และใช้ await กับ Promise ได้"),
+  quizItem("ES2018", "const {a, ...rest} = {a: 1, b: 2}; ค่า rest คืออะไร?", ["{a: 1}", "{b: 2}", "[1, 2]", "undefined"], 1, "Rest properties รวบ property ที่เหลือหลังดึง a แล้ว จึงได้ {b: 2}"),
+  quizItem("ES2019", "[1, [2, 3]].flat() ได้ผลลัพธ์ใด?", ["[1, 2, 3]", "[[1], [2], [3]]", "[1, [2, 3]]", "[1, 6]"], 0, "flat() คลี่ array ซ้อนกันหนึ่งระดับโดยปริยาย"),
+  quizItem("ES2019", "Object.fromEntries([[\"a\", 1]]) ใช้ทำอะไร?", ["สร้าง object ใหม่จากคู่ key-value", "แปลง object เป็น array", "ลบ property a", "ค้นหาสมาชิกสุดท้าย"], 0, "Object.fromEntries() สร้าง object ใหม่จากรายการคู่ key-value"),
+  quizItem("ES2020", "null ?? \"default\" ให้ผลลัพธ์ใด?", ["null", "false", "\"default\"", "undefined"], 2, "?? ใช้ค่าด้านขวาเมื่อค่าด้านซ้ายเป็น null หรือ undefined"),
+  quizItem("ES2020", "obj?.person?.name ช่วยเรื่องใด?", ["หลีกเลี่ยง error เมื่อค่าระหว่างทางเป็น null หรือ undefined", "สร้าง property name เสมอ", "เปลี่ยน obj เป็น array", "ทำให้ Promise สำเร็จ"], 0, "Optional chaining (?.) ช่วยอ่าน property ต่อไปอย่างปลอดภัยเมื่อค่าอาจไม่มี"),
+  quizItem("ES2021", "ตัวเลข 1000_000_000 ใช้ _ เพื่ออะไร?", ["หารตัวเลข", "แยกหลักให้อ่านง่าย", "เปลี่ยนเป็น string", "ระบุว่าเป็น BigInt"], 1, "Numeric separator (_) ช่วยจัดกลุ่มหลักตัวเลขเพื่อให้อ่านง่าย"),
+  quizItem("ES2021", "เมธอดใดแทนที่ข้อความที่ตรงกันทุกตำแหน่งใน string?", ["replaceAll()", "trimStart()", "repeat()", "includes()"], 0, "replaceAll() ใช้แทนข้อความที่ตรงกันทุก occurrence"),
+  quizItem("ES2021", "ถ้า x เป็น null คำสั่ง x ??= 5 ทำให้ x เป็นอะไร?", ["null", "0", "5", "false"], 2, "??= กำหนดค่าด้านขวาเมื่อค่าด้านซ้ายเป็น null หรือ undefined"),
+  quizItem("ES2022", "กำหนด arr = [1, 2, 3, 4]; arr.at(2) คืออะไร?", ["1", "2", "3", "4"], 2, "at() อ่านสมาชิกตาม index โดย index 2 คือสมาชิกตัวที่สาม"),
+  quizItem("ES2022", "Object.hasOwn({foo: false}, \"foo\") คืนอะไร?", ["false เพราะค่า foo เป็น false", "true เพราะ object มี property foo", "undefined", "null"], 1, "Object.hasOwn() ตรวจว่ามี property เป็นของ object หรือไม่ ไม่ได้ตรวจค่าของ property"),
+  quizItem("ES2023", "[5, 10, 15, 20].findLast(n => n > 10) ได้ค่าใด?", ["10", "15", "20", "-1"], 2, "findLast() ค้นจากท้าย array และคืนสมาชิกตัวแรกที่ผ่านเงื่อนไขเมื่อค้นย้อนกลับ"),
+  quizItem("ES2023", "toReversed() ต่างจาก reverse() ตามหัวข้อ Change Array by Copy อย่างไร?", ["คืน array ใหม่ที่เรียงย้อนกลับ", "ลบ array ทิ้ง", "คืนค่า Boolean", "เปลี่ยน array เป็น Set"], 0, "สไลด์จัด toReversed() ในกลุ่มเมธอดที่เปลี่ยน array ด้วยการคืนสำเนาใหม่"),
+  quizItem("ES2025", "ตามสไลด์ ES2025 เมธอด Set ใดหาสมาชิกที่อยู่ในทั้งสอง Set?", ["union()", "intersection()", "difference()", "toArray()"], 1, "ตัวอย่าง Set Methods ในสไลด์ใช้ intersection() เพื่อหาสมาชิกร่วมของสอง Set"),
+  quizItem("ES2026", "ตามสไลด์ เมธอดใดใช้สร้าง Array จากข้อมูลแบบ asynchronous?", ["Array.fromAsync()", "Array.includes()", "Array.flat()", "Array.at()"], 0, "สไลด์ยก Array.fromAsync() สำหรับสร้าง Array จาก async iterable หรือข้อมูลคล้าย iterable")
+];
+
+const part2Questions = [
+  quizItem("FUNCTIONS", "เหตุผลหลักข้อใดที่สไลด์ยกไว้สำหรับการใช้ function?", ["ทำให้ทุกตัวแปรเป็น global", "นำโค้ดกลับมาใช้ซ้ำและแยกงานเป็นส่วนย่อย", "ทำให้ไม่ต้องใช้ HTML", "บังคับให้ทุกคำสั่งทำพร้อมกัน"], 1, "Function ช่วย reuse โค้ด แยกปัญหาเป็นส่วนย่อย จัดระเบียบ และดูแลแก้ไขง่ายขึ้น"),
+  quizItem("FUNCTIONS", "function sum(a, b) { return a + b; } เมื่อเรียก sum(2, 3) ได้ค่าใด?", ["2", "3", "5", "undefined"], 2, "return ส่งค่าผลลัพธ์กลับจาก function ดังนั้น 2 + 3 = 5"),
+  quizItem("FUNCTIONS", "function greet(text = \"hello\") หากเรียก greet() โดยไม่ส่งค่า text จะใช้ค่าใด?", ["undefined เสมอ", "null", "\"hello\"", "false"], 2, "default parameter ใช้ค่าที่กำหนดไว้เมื่อไม่มีอาร์กิวเมนต์ส่งมา"),
+  quizItem("ARROW FUNCTIONS", "ข้อใดเป็น arrow function ที่บวก a และ b แบบย่อ?", ["(a, b) => a + b", "(a, b) -> a + b", "function => (a, b)", "a + b => return"], 0, "รูปแบบย่อในสไลด์คือ (a, b) => a + b"),
+  quizItem("ARROW FUNCTIONS", "Arrow function ที่ไม่มีพารามิเตอร์เขียนส่วนหน้าของ => อย่างไร?", ["ไม่ต้องเขียนอะไร", "[]", "()", "{}"], 2, "ตัวอย่างในสไลด์ใช้ () => เมื่อไม่มีพารามิเตอร์"),
+  quizItem("CONSTRUCTORS", "Constructor function ใช้สร้าง object โดยเรียกพร้อมคำสำคัญใด?", ["new", "extends", "return", "await"], 0, "Constructor function ถูกเรียกด้วย new เพื่อสร้าง object ใหม่"),
+  quizItem("CONSTRUCTORS", "ภายใน constructor คำว่า this หมายถึงอะไร?", ["object ที่กำลังถูกสร้าง", "ไฟล์ HTML ทั้งหมด", "function ก่อนหน้า", "array ตัวสุดท้าย"], 0, "สไลด์ระบุว่า this ใน constructor อ้างถึง object ใหม่ที่กำลังสร้าง"),
+  quizItem("FIRST-CLASS", "First-class function หมายถึงข้อใด?", ["Function ใช้ได้แค่เรียกตรง ๆ", "Function ถูกจัดการเหมือนค่า เช่น เก็บในตัวแปรหรือส่งเป็นอาร์กิวเมนต์", "Function ต้องอยู่ใน class", "Function ต้องไม่มี return"], 1, "Function สามารถเก็บในตัวแปร ส่งให้ function อื่น คืนจาก function หรือเก็บในโครงสร้างข้อมูลได้"),
+  quizItem("FIRST-CLASS", "ใน flexible(sumFunction, 3, 4) มีการใช้ function ในบทบาทใด?", ["ส่ง function เป็นอาร์กิวเมนต์", "สร้าง class ใหม่", "ลบ function เดิม", "เปลี่ยน 3 เป็น string"], 0, "สไลด์ยกตัวอย่างการส่ง sumFunction ให้ flexible เป็นพารามิเตอร์"),
+  quizItem("HIGHER-ORDER", "Higher-order function คือ function ที่มีลักษณะใด?", ["รับ function เป็นอาร์กิวเมนต์หรือคืน function", "มีพารามิเตอร์ 10 ตัวขึ้นไป", "รันได้เฉพาะใน browser", "ต้องประกาศด้วย class"], 0, "นิยามในสไลด์คือ function ที่รับ function อื่นเป็นอาร์กิวเมนต์หรือคืน function เป็นผลลัพธ์"),
+  quizItem("CALLBACKS", "Callback function มักถูกส่งให้ API เพื่ออะไร?", ["ตอบสนองเมื่อเหตุการณ์หรือการทำงานที่รออยู่เกิดขึ้น", "ทำให้ CSS เปลี่ยนชนิด", "สร้างตัวแปร global เท่านั้น", "หยุดทุก event"], 0, "Callback ช่วยให้โปรแกรมตอบสนองต่อเหตุการณ์หรือการทำงานที่เกิดภายหลัง เช่น ตัวอย่าง setTimeout"),
+  quizItem("CALLBACKS", "setTimeout(greet, 2000) ส่งอะไรเป็นอาร์กิวเมนต์ตัวแรก?", ["ผลลัพธ์จาก greet()", "ตัว function greet เพื่อเรียกภายหลัง", "ข้อความ \"greet\"", "เลข 2000"], 1, "ตัวอย่างส่งตัว function greet เป็น callback ให้ setTimeout เรียกภายหลัง"),
+  quizItem("SCOPE", "ตัวแปรที่ประกาศด้วย let หรือ const ในบล็อก if จะเข้าถึงได้ที่ใด?", ["ทุกไฟล์ในเว็บไซต์", "เฉพาะภายในบล็อกนั้น", "เฉพาะ CSS", "ทุก function ในหน้า"], 1, "let และ const มี block scope จึงเข้าถึงได้ภายในบล็อกที่ประกาศ"),
+  quizItem("SCOPE", "var ที่ประกาศในบล็อก if ภายใน function มี scope ถึงที่ใด?", ["เฉพาะบล็อก if", "ทั้ง function ที่ครอบอยู่", "ทุก module", "เฉพาะบรรทัดประกาศ"], 1, "var มี scope ถึง function ที่อยู่ใกล้ที่สุด ไม่ถูกจำกัดแค่บล็อก if"),
+  quizItem("SCOPE", "ตัวแปรที่ประกาศใน <script type=\"module\"> มี scope แบบใด?", ["module ของตัวเอง", "ทั่วทุกหน้าโดยอัตโนมัติ", "เฉพาะ CSS", "เฉพาะแท็ก <body>"], 0, "สไลด์อธิบายว่าแต่ละ module มี scope ของตัวเอง"),
+  quizItem("CLOSURES", "Closure ช่วยให้ function ที่ถูกคืนออกมายังเข้าถึงอะไรได้?", ["ตัวแปรจากบริบทรอบนอกที่ function อ้างถึง", "DOM ทุกตัวโดยไม่ต้องเลือก", "CSS ทุกไฟล์", "ค่าของ Promise ที่ยังไม่สร้าง"], 0, "Closure คือ function พร้อมการอ้างอิงตัวแปรภายนอก จึงยังใช้ตัวแปรนั้นได้หลัง function ชั้นนอกจบ"),
+  quizItem("OOP", "Class ในแนวคิด OOP ทำหน้าที่อะไร?", ["เป็นต้นแบบของ object พร้อม properties และ methods", "เป็น event ของ browser", "เป็นสมาชิกตัวแรกของ array", "เป็นสัญลักษณ์ยกกำลัง"], 0, "สไลด์นิยาม class เป็นต้นแบบของ object ที่ระบุ properties และ methods"),
+  quizItem("OOP", "Object ที่สร้างจาก class เรียกว่าอะไรในบริบทนี้?", ["instance", "selector", "callback", "module"], 0, "การสร้าง object จาก class เรียกว่า instantiation และ object นั้นเป็น instance ของ class"),
+  quizItem("OOP", "เมธอดใดใน class ทำงานเมื่อสร้าง object ใหม่ด้วย new?", ["constructor", "filter", "querySelector", "appendChild"], 0, "constructor ถูกเรียกทุกครั้งที่เริ่มสร้าง object จาก class"),
+  quizItem("OOP", "คำสั่งใดสร้าง object จาก class Instructor?", ["let x = Instructor;", "let x = new Instructor(...);", "let x = extends Instructor;", "let x = class Instructor;"], 1, "ใช้ new เรียก constructor ของ class พร้อมค่าที่ต้องการ"),
+  quizItem("INHERITANCE", "class UnivInstructor extends Instructor แสดงความสัมพันธ์ใด?", ["UnivInstructor สืบทอดจาก Instructor", "Instructor สืบทอดจาก UnivInstructor", "สอง class ไม่เกี่ยวกัน", "สร้าง array ใหม่"], 0, "extends ระบุให้ UnivInstructor เป็น subclass ที่สืบทอดจาก Instructor"),
+  quizItem("INHERITANCE", "ใน constructor ของ subclass คำสั่ง super(...) ใช้เพื่ออะไร?", ["เรียก constructor ของ superclass", "สร้าง DOM node", "จบการทำงานของ loop", "ลบ property ทั้งหมด"], 0, "ตัวอย่างในสไลด์ใช้ super(...) ส่งค่าให้ constructor ของ superclass"),
+  quizItem("INHERITANCE", "Subclass ที่สืบทอดจาก superclass จะได้รับสิ่งใด?", ["properties และ methods ของ superclass", "เฉพาะชื่อ class", "เฉพาะ CSS style", "เฉพาะ event click"], 0, "ตัวอย่าง UnivInstructor ใช้ properties และ methods ที่ได้รับจาก Instructor พร้อมเพิ่มของตนเอง"),
+  quizItem("DOM", "DOM ช่วยให้ JavaScript ทำอะไรกับเอกสารเว็บได้?", ["เข้าถึงและปรับเนื้อหา โครงสร้าง และรูปแบบ", "เปลี่ยนชื่อโดเมนโดยตรง", "คอมไพล์ JavaScript ล่วงหน้า", "สร้างฐานข้อมูลอัตโนมัติ"], 0, "DOM เป็น programming interface ที่ให้สคริปต์เข้าถึงและอัปเดตส่วนต่าง ๆ ของเอกสารเว็บ"),
+  quizItem("DOM", "ใน HTML DOM ข้อความที่อยู่ภายในแท็กเป็น node ชนิดใด?", ["document node", "element node", "text node", "attribute node"], 2, "สไลด์อธิบายว่าตัวแท็กคือ element node ส่วนข้อความภายในคือ text node"),
+  quizItem("DOM SELECTORS", "ถ้าต้องการ element ที่มี id=\"demo\" ควรใช้คำสั่งใด?", ["document.getElementById(\"demo\")", "document.getElementsByTagName(\"demo\")", "document.write(\"demo\")", "document.createTextNode(\"demo\")"], 0, "getElementById() เลือก element ด้วยค่า id ที่ระบุ"),
+  quizItem("DOM SELECTORS", "document.querySelectorAll(\".item\") คืนอะไร?", ["element ตัวแรกเท่านั้น", "รายการ element ทุกตัวที่ตรงกับ selector", "ข้อความใน element", "ค่า Boolean"], 1, "querySelectorAll() คืนรายการ element ที่ตรงกับ CSS selector ที่กำหนด"),
+  quizItem("DOM METHODS", "คู่คำสั่งใดใช้สร้าง <p> ใหม่แล้วเพิ่มเข้าไปท้าย parent?", ["createElement() และ appendChild()", "querySelector() และ removeChild()", "setAttribute() และ getElementById()", "textContent และ onclick"], 0, "สไลด์สร้าง element ด้วย createElement() แล้วเพิ่มเป็นลูกท้ายสุดด้วย appendChild()"),
+  quizItem("DOM METHODS", "ถ้าต้องการลบ child node ที่เลือกไว้จาก parent ใช้เมธอดใด?", ["removeChild()", "createTextNode()", "querySelectorAll()", "setAttribute()"], 0, "removeChild() ใช้ลบ child จาก parent โดยต้องเลือก node ที่ต้องการให้ถูกต้องก่อน"),
+  quizItem("EVENTS", "โค้ด element.addEventListener(\"click\", myClick) ทำอะไร?", ["เพิ่มตัวรับเหตุการณ์ click ให้ element", "ลบ element จากหน้า", "กำหนด class ชื่อ click", "เรียก myClick ทันทีเพียงครั้งเดียว"], 0, "addEventListener() ใช้ผูก event กับ element เพื่อให้ callback ทำงานเมื่อ event เกิดขึ้น")
+];
+
+// Each row starts with the correct choice. Rotation places correct answers in different positions.
+const fromRows = (rows) => rows.map(([topic, text, correct, wrong1, wrong2, wrong3, explanation], index) => {
+  const choices = [correct, wrong1, wrong2, wrong3];
+  const answer = [2, 0, 3, 1][index % 4];
+  const options = [...choices.slice(4 - answer), ...choices.slice(0, 4 - answer)];
+  return quizItem(topic, text, options, answer, explanation);
+});
+
+const part1Set2 = fromRows([
+  ["BASICS", "ส่วนใดของเว็บเพจระบุโครงสร้างและเนื้อหาเป็นหลัก?", "HTML", "CSS", "JavaScript", "Cookie", "HTML ใช้กำหนดโครงสร้างและเนื้อหาของหน้าเว็บ"],
+  ["BASICS", "สไลด์เรียก JavaScript ว่า interpreted language หมายถึงอะไร?", "สคริปต์ทำงานได้โดยไม่ต้องคอมไพล์ล่วงหน้า", "ต้องแปลงเป็น CSS ก่อน", "ทำงานได้เฉพาะบนเซิร์ฟเวอร์", "ต้องใช้ฐานข้อมูลทุกครั้ง", "สไลด์อธิบายว่า interpreted คือรันสคริปต์โดยไม่ต้องคอมไพล์ก่อน"],
+  ["BASICS", "ข้อใดเป็นตัวอย่างการใช้ JavaScript ตามสไลด์?", "ตรวจสอบข้อมูลที่ผู้ใช้กรอก", "สร้างสีของภาพต้นฉบับ", "กำหนด DNS", "เปลี่ยนฮาร์ดแวร์", "JavaScript ใช้ validate data ได้"],
+  ["HOW TO USE JS", "แท็ก <script> สามารถวางในตำแหน่งใดของ HTML ตามสไลด์?", "ใน <head> หรือ <body>", "ใน <title> เท่านั้น", "ก่อน <html> เท่านั้น", "ในไฟล์ CSS เท่านั้น", "สไลด์ระบุว่า script tag ใส่ใน head หรือ body ได้"],
+  ["HOW TO USE JS", "ในไฟล์ .js ภายนอก ต้องใส่แท็ก <script> ครอบโค้ดอีกหรือไม่?", "ไม่ต้อง", "ต้องใส่ทุกครั้ง", "ต้องใส่เฉพาะบรรทัดแรก", "ต้องใส่เฉพาะฟังก์ชัน", "ไฟล์ .js เก็บไวยากรณ์ JavaScript โดยตรง ไม่ต้องมีแท็ก script"],
+  ["VARIABLES", "กำหนด ID = \"9\", firstName = \"Ann\"; ผลของ ID + \" \" + firstName คืออะไร?", "\"9 Ann\"", "\"9Ann\"", "9", "undefined", "เครื่องหมาย + เมื่อต่อข้อความจะเชื่อมสตริงตามลำดับ"],
+  ["VARIABLES", "ชื่อตัวแปรใดผิดกฎการตั้งชื่อที่สไลด์ให้ไว้ เพราะมีช่องว่าง?", "first name", "firstName", "name2", "userName", "ชื่อตัวแปรในสไลด์ห้ามมีช่องว่าง"],
+  ["VARIABLES", "var x = 1; { var x = 4; } หลังจบบล็อก x มีค่าเท่าใด?", "4", "1", "undefined", "เกิด error", "var ไม่สร้าง block scope ในตัวอย่าง จึงเปลี่ยนตัวแปร x เดิม"],
+  ["VARIABLES", "let x = 2; { let x = 5; } หลังจบบล็อกด้านใน x ด้านนอกมีค่าเท่าใด?", "2", "5", "undefined", "เกิด error", "let ในบล็อกด้านในเป็นคนละตัวกับ let ด้านนอก"],
+  ["VARIABLES", "ข้อใดทำไม่ได้กับตัวแปรที่ประกาศด้วย const ในบล็อกเดิม?", "กำหนดค่าใหม่ให้ตัวแปรนั้น", "อ่านค่า", "ส่งค่าให้ console.log", "ใช้ในนิพจน์", "ตัวแปร const ไม่สามารถถูกกำหนดค่าใหม่"],
+  ["DATA TYPES", "Boolean มีค่าได้กี่แบบและคืออะไร?", "สองแบบ: true และ false", "สองแบบ: 0 และ 1 เท่านั้น", "สามแบบ: true false null", "ไม่จำกัด", "Boolean เป็นค่าตรรกะ true หรือ false"],
+  ["DATA TYPES", "ข้อใดสื่อถึงการไม่มีค่าโดยตั้งใจในสไลด์?", "null", "undefined", "NaN", "false", "null หมายถึงตั้งใจให้ไม่มีค่า ส่วน undefined ยังไม่ถูกกำหนดค่า"],
+  ["OBJECTS", "ข้อใดเป็น built-in object ที่สไลด์ยกตัวอย่าง?", "Math", "<body>", "onclick", "var", "Math เป็น built-in object ของ JavaScript"],
+  ["DATA TYPES", "let v = 10; v = \"Hi\"; หลังบรรทัดที่สอง typeof v คืออะไร?", "\"string\"", "\"number\"", "\"boolean\"", "\"undefined\"", "v เก็บค่าข้อความหลังถูกกำหนดใหม่ จึงมี typeof เป็น string"],
+  ["NUMBER", "Number.parseInt(\"10.569\") ได้ผลอะไร?", "10", "10.569", "11", "NaN", "parseInt อ่านเป็นจำนวนเต็มจากข้อความ จึงได้ 10"],
+  ["NUMBER", "Number.parseFloat(\"10.569\") ได้ผลอะไร?", "10.569", "10", "11", "NaN", "parseFloat อ่านเลขทศนิยมจากข้อความ"],
+  ["NUMBER", "Number.isNaN(Number.parseInt(\"Hi\")) ได้ค่าใด?", "true", "false", "0", "\"Hi\"", "parseInt ของข้อความที่อ่านเป็นเลขไม่ได้ให้ NaN แล้ว isNaN จึงเป็น true"],
+  ["MATH", "Math.pow(5, 2) ได้ค่าเท่าใด?", "25", "10", "7", "32", "Math.pow(5,2) คือ 5 ยกกำลัง 2"],
+  ["MATH", "ข้อใดเป็น property ของ Math ที่ใช้แทนค่า π?", "Math.PI", "Math.pow", "Math.abs", "Math.round", "Math.PI เป็น property สำหรับค่า pi"],
+  ["DATE", "dateObj.getFullYear() คืนข้อมูลอะไร?", "ปีแบบเต็ม", "วันที่ของเดือน", "วันในสัปดาห์", "เวลาเป็นมิลลิวินาที", "getFullYear() คืนค่าปีจาก Date object"],
+  ["ARRAYS", "Array.isArray([1, 2]) ให้ค่าอะไร?", "true", "false", "2", "undefined", "Array.isArray() ใช้ตรวจว่าค่าที่ส่งให้เป็น array หรือไม่"],
+  ["ARRAYS", "let a = [\"X\", \"Y\", \"Z\"]; a.length เป็นเท่าใด?", "3", "2", "0", "undefined", "length คือจำนวนสมาชิกใน array"],
+  ["ARRAYS", "let a = [1, 2, 3]; a.pop() คืนค่าอะไร?", "3", "1", "[1, 2]", "undefined", "pop() นำสมาชิกตัวท้ายออกและคืนค่าของสมาชิกนั้น"],
+  ["ARRAYS", "arr.forEach(fn) ทำอะไร?", "เรียก fn หนึ่งครั้งต่อสมาชิกแต่ละตัว", "สร้าง object ใหม่เสมอ", "ลบสมาชิกตัวท้าย", "คืน index ตัวแรก", "forEach() เรียกฟังก์ชันที่ให้กับสมาชิกแต่ละตัว"],
+  ["STRINGS", "\"Hello\".charAt(1) ได้อะไร?", "\"e\"", "\"H\"", "\"l\"", "1", "ตำแหน่งตัวอักษรเริ่มที่ 0 ดังนั้น index 1 คือ e"],
+  ["STRINGS", "\"red blue\".split(\" \" ) ได้ข้อมูลแบบใด?", "[\"red\", \"blue\"]", "\"redblue\"", "[\"red blue\"]", "2", "split() แยกข้อความตามตัวคั่นเป็น array"],
+  ["STRINGS", "\"Hello World\".substring(3, 10) ได้ข้อความใด?", "\"lo Worl\"", "\"Hello\"", "\"World\"", "\"lo World\"", "substring(3,10) เลือก index 3 ถึงก่อน index 10"],
+  ["OPERATORS", "5 ** 2 มีค่าเท่าใด?", "25", "10", "7", "3", "** คือตัวดำเนินการยกกำลัง"],
+  ["OPERATORS", "ถ้า x = 4 แล้วสั่ง ++x ค่า x เป็นเท่าใด?", "5", "4", "3", "8", "++ เพิ่มค่าตัวแปรขึ้น 1"],
+  ["LOOPS", "Counter-controlled loop หยุดตามเงื่อนไขใด?", "เมื่อ counter ถึงค่าที่กำหนด", "เมื่อพบข้อความใดก็ได้", "เมื่อเปิดหน้าใหม่", "เมื่อ array มีค่า null เสมอ", "ลูปชนิดนี้ใช้ counter ที่อัปเดตทุกครั้งและหยุดเมื่อถึงค่าที่กำหนด"]
+]);
+
+const part1Set3 = fromRows([
+  ["TIC TAC TOE", "ตาราง Tic Tac Toe ในสไลด์มีทั้งหมดกี่ช่อง?", "9 ช่อง", "6 ช่อง", "8 ช่อง", "12 ช่อง", "ตารางมี 3 แถว × 3 คอลัมน์ รวม 9 ช่อง"],
+  ["TIC TAC TOE", "data-cell-index ของช่องในตัวอย่างอยู่ในช่วงใด?", "0 ถึง 8", "1 ถึง 9", "0 ถึง 9", "1 ถึง 8", "สไลด์กำหนด index ให้ 9 ช่องตั้งแต่ 0 ถึง 8"],
+  ["TIC TAC TOE", "document.querySelectorAll(\".cell\") เลือกอะไร?", "ทุก element ที่มี class cell", "cell ตัวแรกเท่านั้น", "element id cell", "ไฟล์ CSS", "querySelectorAll เลือก element ทุกตัวที่ตรง selector .cell"],
+  ["TIC TAC TOE", "handleCellPlayed อัปเดตสิ่งใดสองอย่าง?", "gameState และข้อความในช่องที่คลิก", "แค่คะแนน", "แค่ชื่อผู้เล่น", "CSS และรูปภาพ", "ตัวอย่างกำหนด gameState[index] และ clickedCell.innerHTML"],
+  ["TIC TAC TOE", "เมื่อ currentPlayer เป็น X แล้วเรียก handlePlayerChange จะเปลี่ยนเป็นอะไร?", "O", "X", "ค่าว่าง", "undefined", "ฟังก์ชันใช้ ternary สลับ X กับ O"],
+  ["TIC TAC TOE", "winningConditions ในตัวอย่างมีแนวชนะทั้งหมดกี่แบบ?", "8 แบบ", "3 แบบ", "6 แบบ", "9 แบบ", "มี 3 แถว 3 คอลัมน์ และ 2 แนวทแยง รวม 8 แบบ"],
+  ["TIC TAC TOE", "!gameState.includes(\"\") ใช้ตรวจอะไร?", "ไม่มีช่องว่างเหลือในสถานะเกม", "ผู้เล่น X ชนะ", "ปุ่มรีสตาร์ตถูกคลิก", "กำลังเริ่มเกม", "เมื่อไม่มีสตริงว่างใน gameState แปลว่าทุกช่องถูกเล่นแล้ว"],
+  ["TIC TAC TOE", "เมื่อเกมชนะหรือเสมอ ตัวอย่างกำหนด gameActive เป็นอะไร?", "false", "true", "null", "0", "การตั้ง gameActive=false ทำให้หยุดรับตาที่เล่นเพิ่ม"],
+  ["TIC TAC TOE", "เมื่อกด Restart ตัวอย่างรีเซ็ต currentPlayer เป็นใคร?", "X", "O", "ผู้ชนะล่าสุด", "ค่าว่าง", "handleRestartGame กำหนด currentPlayer กลับเป็น X"],
+  ["TIC TAC TOE", "element class game-status ใช้แสดงอะไร?", "สถานะตาเล่นหรือผลเกม", "ตาราง 3×3", "เลข index ทุกช่อง", "CSS grid", "สไลด์ใช้ game-status แสดงตาของผู้เล่นและข้อความชนะหรือเสมอ"],
+  ["TIC TAC TOE", "CSS grid-template-columns: repeat(3, auto) สร้างกี่คอลัมน์?", "3 คอลัมน์", "9 คอลัมน์", "2 คอลัมน์", "1 คอลัมน์", "repeat(3, auto) ระบุจำนวนคอลัมน์ 3 ช่อง"],
+  ["VARIABLES", "let firstName = \"Jidapa\", nickName = \"Pa\"; firstName = firstName + \" \" + nickName; ผลคืออะไร?", "\"Jidapa Pa\"", "\"JidapaPa\"", "\"Pa Jidapa\"", "undefined", "นิพจน์ต่อชื่อ ช่องว่าง และชื่อเล่นตามลำดับ"],
+  ["VARIABLES", "let i = 5; for (let i = 0; i < 2; i++) {} หลังลูป i ด้านนอกมีค่าใด?", "5", "2", "0", "undefined", "let ที่ประกาศใน for มี scope ของลูป จึงไม่เปลี่ยน i ด้านนอก"],
+  ["STRINGS", "\"A\" + \"B\" ได้ผลอะไร?", "\"AB\"", "\"A B\"", "2", "NaN", "+ ใช้ต่อ string ได้"],
+  ["NUMBER", "Number.parseInt(\"Hello\") ได้ค่าใด?", "NaN", "0", "\"Hello\"", "false", "ข้อความ Hello ไม่สามารถอ่านเป็นจำนวนเต็ม จึงได้ NaN"],
+  ["DATE", "ค่าเวลาใน Date object ตามสไลด์อ้างอิงจากวันใด?", "1 มกราคม 1970 UTC", "1 มกราคม 2000 UTC", "1 มิถุนายน 2015", "วันที่เปิดหน้าเว็บ", "สไลด์ระบุจำนวนมิลลิวินาทีตั้งแต่ 1 มกราคม 1970 UTC"],
+  ["ARRAYS", "arr.map(fn) ต่างจาก forEach อย่างไรตามสไลด์?", "map สร้าง array ใหม่จากผลของ fn", "map ลบ array เดิม", "map ทำกับตัวแรกเท่านั้น", "map คืน Boolean เสมอ", "map() สร้าง array ใหม่จากผลเรียกฟังก์ชันกับสมาชิกแต่ละตัว"],
+  ["OBJECTS", "let a = {age:30}; let b = a; b.age = 50; ค่า a.age คืออะไร?", "50", "30", "undefined", "null", "a และ b อ้างถึง object เดียวกัน"],
+  ["OPERATORS", "\"1\" === \"1\" ได้ค่าอะไร?", "true", "false", "1", "undefined", "ทั้งชนิดและเนื้อหาของ operand เหมือนกัน"],
+  ["OPERATORS", "\"1\" == 1 ได้ค่าอะไร?", "true", "false", "undefined", "NaN", "== แปลงชนิดก่อนเปรียบเทียบตามตัวอย่างในสไลด์"],
+  ["OPERATORS", "1 !== \"1\" ได้ค่าอะไร?", "true", "false", "1", "undefined", "strict inequality เห็นว่าชนิด number กับ string ต่างกัน"],
+  ["OPERATORS", "!true มีค่าอะไร?", "false", "true", "null", "undefined", "! เป็น logical NOT กลับค่าตรรกะ"],
+  ["OPERATORS", "false || true มีค่าอะไร?", "true", "false", "null", "undefined", "OR เป็น true เมื่ออย่างน้อยหนึ่งด้านเป็น true"],
+  ["OPERATORS", "(2 + 3) * 4 ได้ค่าเท่าใด?", "20", "14", "24", "9", "วงเล็บมีลำดับความสำคัญก่อน จึงบวก 2+3 แล้วคูณ 4"],
+  ["DECISIONS", "if (false) { ... } else { ... } บล็อกใดทำงาน?", "else", "if", "ทั้งสอง", "ไม่มีบล็อกใด", "เมื่อเงื่อนไข if เป็น false จะทำส่วน else"],
+  ["DECISIONS", "ใน switch ถ้าไม่มี case ใดตรงและมี default จะเกิดอะไรขึ้น?", "ทำคำสั่งใน default", "ทำ case แรก", "หยุดโปรแกรมทันที", "วนทุก case", "default รองรับกรณีไม่มี case ใดตรง"],
+  ["LOOPS", "let n=0, x=0; while(n<10){n++;x+=n;} ค่า x หลังลูปคืออะไร?", "55", "10", "45", "0", "x รวมตัวเลข 1 ถึง 10 จึงได้ 55"],
+  ["LOOPS", "let n=1,x=0; do {n++;x+=n;} while(n<1); ค่า x คืออะไร?", "2", "0", "1", "10", "do-while ทำบล็อกก่อนตรวจเงื่อนไขหนึ่งครั้ง จึงเพิ่ม n เป็น 2 และ x เป็น 2"],
+  ["LOOPS", "for (let i=0;i<6;i++){if(i%3===0)continue; console.log(i)} พิมพ์เลขใดบ้าง?", "1, 2, 4, 5", "0, 3", "0, 1, 2, 3, 4, 5", "1, 2, 3, 4, 5", "continue ข้ามรอบที่ i หาร 3 ลงตัว คือ 0 และ 3"],
+  ["LOOPS", "Sentinel-controlled loop เหมาะเมื่อใด?", "ไม่ทราบจำนวนรอบล่วงหน้าและรอค่าหยุด", "รู้จำนวนรอบแน่นอน", "ไม่มีเงื่อนไขหยุด", "ต้องทำเพียงครั้งเดียว", "สไลด์อธิบายว่าค่า sentinel อาจมาถึงเมื่อใดก็ได้ จึงไม่รู้จำนวนรอบก่อนเริ่ม"]
+]);
+
+const ecmaSet2 = fromRows([
+  ["ES2015 · PROMISE", "ในสไลด์ producing code ของ Promise ทำหน้าที่ใด?", "ทำงานที่อาจใช้เวลาแล้วส่งผลให้ consuming code", "วาด CSS", "เปลี่ยนชื่อไฟล์ HTML", "ลบ event", "Promise เชื่อมงานที่ผลิตผลลัพธ์กับโค้ดที่รอใช้ผลลัพธ์"],
+  ["ES2015 · PROMISE", "Promise ที่งานล้มเหลวจะเข้าสถานะใด?", "rejected", "fulfilled", "pending", "ready", "rejected หมายถึง operation ล้มเหลว"],
+  ["ES2015 · PROMISE", "เมธอดใดใช้จัดการข้อผิดพลาดของ Promise โดยเฉพาะ?", ".catch()", ".padEnd()", ".flat()", ".repeat()", "สไลด์ยก .catch() สำหรับกรณีต้องจัดการ error"],
+  ["ES2015 · PROMISE", "อาร์กิวเมนต์ฟังก์ชันตัวที่สองของ promise.then(success, failure) รับอะไร?", "error เมื่อ Promise ถูก reject", "ผลสำเร็จเมื่อ Promise ถูก resolve", "ชื่อ CSS selector", "จำนวนสมาชิกใน array", "สไลด์ระบุว่าฟังก์ชันตัวที่สองของ .then() จัดการกรณี rejected และได้รับ error"],
+  ["ES2015 · TEMPLATE", "const name=\"Ann\"; ข้อความ `Hi ${name}` ได้ผลอะไร?", "\"Hi Ann\"", "\"Hi name\"", "\"Hi ${name}\"", "undefined", "${name} แทรกค่าตัวแปรลงใน template literal"],
+  ["ES2015 · PARAMETERS", "function f(x=7){return x}; f() ได้ค่าอะไร?", "7", "0", "undefined", "null", "เมื่อไม่ส่ง x ฟังก์ชันใช้ default parameter 7"],
+  ["ES2015 · SPREAD", "const a=[1,2]; const b=[...a]; ข้อใดถูกต้อง?", "b เป็น array ใหม่ที่มีสมาชิก 1 และ 2", "b เป็นเลข 2", "b เป็น string", "a ถูกลบ", "spread ช่วยคัดลอกสมาชิก array ไปยัง array ใหม่"],
+  ["ES2015 · SPREAD", "[...\"Hi\"] ได้อะไร?", "[\"H\", \"i\"]", "[\"Hi\"]", "\"Hi\"", "[72, 105]", "spread ขยาย string เป็นตัวอักษรแต่ละตัวใน array"],
+  ["ES2015 · DESTRUCTURING", "const p={firstName:\"Ann\",age:20}; let {firstName:name}=p; ค่า name คืออะไร?", "\"Ann\"", "\"firstName\"", "20", "undefined", "object destructuring สามารถกำหนดชื่อตัวแปรใหม่ด้วย :name"],
+  ["ES2015 · LOOPS", "ข้อใดใช้ได้ภายใน for...of ตามสไลด์ แต่ใช้กับ forEach() แบบเดียวกันไม่ได้?", "break", "console.log", "การอ่านค่า", "function", "สไลด์เน้นว่า for...of ใช้ break, continue และ return ได้"],
+  ["ES2015 · WEAKMAP", "WeakMap มี property size เหมือน Map หรือไม่ตามตารางในสไลด์?", "ไม่มี", "มีเสมอ", "มีเมื่อ key เป็น string", "มีเมื่อเปิด strict mode", "ตารางระบุว่า Map มี size แต่ WeakMap ไม่มี"],
+  ["ES2015 · STRING", "\"Ha\".repeat(3) ได้อะไร?", "\"HaHaHa\"", "\"Ha3\"", "\"HHHaaa\"", "3", "repeat(3) ทำซ้ำ string 3 ครั้ง"],
+  ["ES2015 · ARRAY", "[10,30,25].find(n=>n<30) คืนค่าใด?", "10", "25", "30", "0", "find() คืนสมาชิกตัวแรกที่ผ่านเงื่อนไข"],
+  ["ES2015 · ARRAY", "[10,30,25].findIndex(n=>n<30) คืนค่าใด?", "0", "10", "2", "-1", "findIndex() คืน index ตัวแรกที่ผ่านเงื่อนไข"],
+  ["ES2015 · REST", "function f(...args){return args.length}; f(1,2,3) ได้อะไร?", "3", "1", "2", "undefined", "rest parameter รวบ 3 อาร์กิวเมนต์เป็น array"],
+  ["ES2016", "[10,30].includes(25) คืนค่าอะไร?", "false", "true", "-1", "undefined", "includes() คืน Boolean ตามการมีหรือไม่มีสมาชิก"],
+  ["ES2017 · STRING", "\"Hi\".padEnd(4, \"!\") ได้อะไร?", "\"Hi!!\"", "\"!!Hi\"", "\"Hi!\"", "\"Hi\"", "padEnd เติมด้านหลังจนข้อความยาว 4 ตัวอักษร"],
+  ["ES2017 · OBJECT", "Object.values({a:1,b:2}) คืนข้อมูลใด?", "[1,2]", "[\"a\",\"b\"]", "[[\"a\",1],[\"b\",2]]", "{a:1,b:2}", "Object.values() คืน array ของค่าของ properties"],
+  ["ES2017 · ASYNC", "await ใช้ทำอะไรกับ Promise ในตัวอย่างของสไลด์?", "รอจน Promise เสร็จแล้วรับผลลัพธ์", "สร้าง class ใหม่", "ปิด browser", "เปลี่ยน Promise เป็น Map", "await รอให้ Promise settle ก่อนดำเนินการต่อใน async function"],
+  ["ES2018", "for await...of ใช้กับข้อมูลแบบใดตามสไลด์?", "async iterable", "เฉพาะ string ธรรมดา", "เฉพาะ CSS selector", "เฉพาะ object ที่ไม่มีค่า", "สไลด์แนะนำ for-await-of สำหรับวน async iterable"],
+  ["ES2019 · ARRAY", "[1,[2,[3]]].flat(2) ได้อะไร?", "[1,2,3]", "[1,2,[3]]", "[[1,2],3]", "[1,[2,[3]]]", "flat(2) คลี่ array ซ้อนกันสองระดับ"],
+  ["ES2019 · ARRAY", "[1,2].flatMap(n=>[n,n*2]) ได้อะไร?", "[1,2,2,4]", "[[1,2],[2,4]]", "[2,4]", "[1,2]", "flatMap() รวมการ map และคลี่ผลลัพธ์หนึ่งระดับ"],
+  ["ES2019 · STRING", "\"  Hi\".trimStart() ได้อะไร?", "\"Hi\"", "\"  Hi\"", "\"Hi  \"", "\"H\"", "trimStart() ลบ whitespace ด้านหน้าข้อความ"],
+  ["ES2019 · STRING", "\"Hi  \".trimEnd() ได้อะไร?", "\"Hi\"", "\"  Hi\"", "\"Hi  \"", "\"H\"", "trimEnd() ลบ whitespace ด้านท้ายข้อความ"],
+  ["ES2020 · BIGINT", "ตามสไลด์ BigInt จัดเป็นอะไร?", "ชนิดข้อมูล primitive ใหม่", "CSS property", "HTML tag", "Promise state", "สไลด์ระบุ BigInt เป็น primitive data type"],
+  ["ES2020 · NULLISH", "0 ?? 99 ให้ค่าใด?", "0", "99", "null", "undefined", "?? ใช้ค่าด้านขวาเฉพาะเมื่อด้านซ้ายเป็น null หรือ undefined; 0 ไม่ใช่ nullish"],
+  ["ES2020 · OPTIONAL", "ถ้า obj={a:null}, นิพจน์ obj.a?.b ได้อะไร?", "undefined", "error เสมอ", "null", "true", "optional chaining หยุดอย่างปลอดภัยเมื่อค่าเป็น null"],
+  ["ES2020 · STRING", "String.matchAll() ใช้ทำอะไรตามสไลด์?", "ค้นหาการตรงกันทั้งหมดของ regular expression ใน string", "แทนคำทั้งหมด", "เติมข้อความด้านหน้า", "สร้าง Promise", "matchAll() ใช้ regular expression เดียวค้นหา match หลายตำแหน่ง"],
+  ["ES2021 · ASSIGNMENT", "let x=1; x &&= 5; ค่า x คืออะไร?", "5", "1", "0", "undefined", "&&= กำหนดค่าด้านขวาเมื่อค่าด้านซ้ายเป็น truthy"],
+  ["ES2021 · ASSIGNMENT", "let x=0; x ||= 5; ค่า x คืออะไร?", "5", "0", "1", "undefined", "||= กำหนดค่าด้านขวาเมื่อค่าด้านซ้ายเป็น falsy"]
+]);
+
+const ecmaSet3 = fromRows([
+  ["VERSIONS", "จากตารางในสไลด์ ES1 เผยแพร่ปีใด?", "1997", "1999", "2009", "2015", "ตารางเวอร์ชันระบุ ES1 ในปี 1997"],
+  ["VERSIONS", "จากตารางในสไลด์ ES4 มีสถานะใด?", "ถูกยกเลิก (Abandoned)", "ออกปี 2015", "เป็น ES2020", "เป็นเวอร์ชันล่าสุด", "ตารางระบุ ES4 ว่า Abandoned"],
+  ["ES2018 · REST", "const {a,...rest}={a:1,b:2,c:3}; rest มีค่าใด?", "{b:2,c:3}", "{a:1}", "[2,3]", "undefined", "rest properties รวบ property ที่เหลือหลังดึง a"],
+  ["ES2021 · ASSIGNMENT", "let x=4; x ??= 9; ค่า x หลังคำสั่งคืออะไร?", "4", "9", "null", "undefined", "??= ไม่เปลี่ยนค่าเมื่อด้านซ้ายไม่ใช่ null หรือ undefined"],
+  ["ES2022 · AT", "\"1234\".at(3) ได้อะไร?", "\"4\"", "\"3\"", "4", "undefined", "index 3 ของ string เป็นอักขระตัวที่สี่"],
+  ["ES2022 · HASOWN", "Object.hasOwn({foo:false},\"foo\") คืนค่าอะไร?", "true", "false", "undefined", "null", "มี property foo อยู่จริง แม้ค่าของมันเป็น false"],
+  ["ES2022 · ERROR", "ตัวเลือก {cause: error} เมื่อสร้าง Error ใช้บันทึกอะไร?", "สาเหตุข้อผิดพลาดเดิม", "ชื่อโมดูล", "array index", "ค่าของ Promise", "สไลด์ยกตัวอย่างส่ง error เดิมเป็น cause ของ Error ใหม่"],
+  ["ES2022 · MODULE", "Top-level await ตามหัวข้อในสไลด์ใช้ await ตำแหน่งใด?", "ระดับบนสุดของ module", "เฉพาะใน CSS", "ภายใน switch เท่านั้น", "เฉพาะใน constructor", "หัวข้อ ES2022 กล่าวถึง top-level await ใน modules"],
+  ["ES2023 · ARRAY", "[5,10,15,20].findLastIndex(n=>n>10) ได้ index ใด?", "3", "2", "1", "0", "ค้นย้อนจากท้ายและ 20 ที่ index 3 ผ่านเงื่อนไขก่อน"],
+  ["ES2023 · COPY", "toSorted() อยู่ในกลุ่มเมธอดใดตามสไลด์?", "เปลี่ยน array ด้วยการคืนสำเนาใหม่", "แก้ array เดิมเท่านั้น", "สร้าง Promise", "อ่าน DOM", "สไลด์จัด toSorted ใน Change Array by Copy"],
+  ["ES2023 · COPY", "toSpliced() ในหัวข้อ Change Array by Copy คืนผลแบบใด?", "array ใหม่", "Boolean", "Promise", "DOM node", "กลุ่มเมธอดนี้เปลี่ยน array โดยคืนสำเนาใหม่"],
+  ["ES2023 · COPY", "arr.with(index,value) ตามสไลด์ใช้กับสิ่งใด?", "array โดยคืนสำเนาที่แทนค่า ณ index", "Promise state", "String padding", "Date object", "with() อยู่ในชุด Change Array by Copy"],
+  ["ES2024 · UNICODE", "ตามสไลด์ toWellFormed() เกี่ยวข้องกับเรื่องใด?", "การจัดการ Unicode string", "การคำนวณกำลังสอง", "การเพิ่ม DOM node", "การสร้าง Set", "สไลด์ยก toWellFormed ในหัวข้อ Well-formed Unicode Strings"],
+  ["ES2024 · PROPOSALS", "ในสไลด์ Pipeline Operator (|>) ถูกระบุว่าอยู่สถานะใด?", "ข้อเสนอทดลอง Stage 1", "ใช้ได้ทุก browser แล้ว", "ถูกแทนด้วย CSS", "เป็นชนิดข้อมูลพื้นฐาน", "สไลด์ระบุชัดว่า pipeline operator เป็น proposal ขั้นทดลอง"],
+  ["ES2024 · PROPOSALS", "Records และ Tuples ในสไลด์ถูกอธิบายว่าอย่างไร?", "ยังเป็นข้อเสนอ ไม่ใช่ JavaScript มาตรฐาน", "เป็น HTML tag", "เป็น Promise state", "ถูกลบจากสไลด์", "สไลด์ระบุว่ายังไม่อยู่ใน JavaScript ทางการ"],
+  ["ES2024 · PROPOSALS", "สไลด์ระบุ Decorators ว่าอยู่ในสถานะใด?", "ข้อเสนอ Stage 2", "เป็น CSS selector", "เป็นชนิด Number", "มีใน ES1", "สไลด์อธิบาย Decorators เป็น proposal Stage 2"],
+  ["TEMPORAL", "ตามสไลด์ Temporal API มุ่งแก้ความยุ่งยากด้านใด?", "วัน เวลา และเขตเวลา", "การเชื่อม CSS", "การจัดการ Promise state", "การวน DOM node", "สไลด์เสนอ Temporal เพื่อช่วยจัดการวัน เวลา และเขตเวลา"],
+  ["ES2025 · MODULES", "ตามสไลด์ import JSON module ใช้ attribute ใด?", "with { type: 'json' }", "with { type: 'css' }", "new Promise()", "extends JSON", "ตัวอย่าง import JSON ในสไลด์ระบุ type: 'json'"],
+  ["ES2025 · ITERATORS", "Iterator Helpers ต่างจาก array map/filter อย่างไรตามสไลด์?", "ทำงานแบบ lazy ไม่สร้าง array ทั้งหมดทันที", "ใช้ได้เฉพาะ CSS", "คืน HTML เสมอ", "ลบ iterator", "สไลด์เน้นการประมวลผลแบบ lazy ของ iterator helpers"],
+  ["ES2025 · SET", "A.union(B) ตามสไลด์คืนสมาชิกแบบใด?", "สมาชิกทั้งหมดจาก A และ B โดยไม่ซ้ำ", "เฉพาะสมาชิกที่ซ้ำกัน", "เฉพาะสมาชิกของ A", "จำนวนสมาชิก", "union คือการรวมสมาชิกของสอง Set"],
+  ["ES2025 · SET", "A.difference(B) ตามตัวอย่างในสไลด์ให้ผลใดเมื่อ A={1,2,3}, B={3,4,5}?", "{1,2}", "{3}", "{4,5}", "{1,2,3,4,5}", "difference เลือกสมาชิกที่อยู่ใน A แต่ไม่อยู่ใน B"],
+  ["ES2025 · PROMISE", "Promise.try() ในสไลด์ใช้ครอบ function แบบใด?", "function ที่อาจ throw ทันทีหรือคืน Promise", "function ที่ต้องเป็น CSS", "function ที่ไม่มี return เท่านั้น", "function ที่ไม่มี error แน่นอน", "Promise.try() ช่วยรวมข้อผิดพลาดทันทีให้จัดการผ่าน Promise"],
+  ["ES2025 · FLOAT16", "Float16Array ในสไลด์เกี่ยวข้องกับสิ่งใด?", "ข้อมูลเลขทศนิยมแบบ half-precision", "DOM attribute", "String padding", "Map key", "Float16Array เก็บเลขแบบ 16-bit half-precision"],
+  ["ES2025 · REGEXP", "RegExp.escape() ในสไลด์มีหน้าที่ใด?", "escape ข้อความให้ใช้ใน regular expression ได้ปลอดภัย", "ลบ regex ทั้งหมด", "แปลง regex เป็น array", "สร้าง DOM node", "สไลด์ระบุว่า RegExp.escape ช่วย escape string สำหรับ regex"],
+  ["ES2026 · MATH", "ตามสไลด์ Math.sumPrecise() ใช้ทำอะไร?", "หาผลรวมตัวเลขอย่างแม่นยำยิ่งขึ้น", "หาค่าสูงสุดใน array", "สร้าง Promise", "แปลง JSON", "สไลด์เสนอ Math.sumPrecise สำหรับการบวก iterable ของตัวเลข"],
+  ["ES2026 · ERROR", "ตามสไลด์ Error.isError() ใช้ตรวจอะไร?", "ค่าหนึ่งเป็น Error object หรือไม่", "Promise สำเร็จหรือไม่", "DOM มี error หรือไม่", "array ว่างหรือไม่", "หัวข้อ ES2026 ยก Error.isError สำหรับตรวจ Error object"],
+  ["ES2026 · ARRAY", "Array.fromAsync() ตามสไลด์รับแหล่งข้อมูลชนิดใดได้?", "async iterable", "เฉพาะ CSS selector", "เฉพาะ HTML node", "เฉพาะ string ว่าง", "สไลด์อธิบายการสร้าง Array จาก async iterable"],
+  ["ES2026 · MAP", "Map.getOrInsert() ตามสไลด์ทำอะไรเมื่อ key ยังไม่มี?", "ใส่ค่าเริ่มต้นใหม่แล้วคืนค่า", "ลบ Map", "คืน null เสมอ", "เปลี่ยน key ทุกตัว", "ตัวอย่างใช้ getOrInsert แทนการตรวจ has แล้ว set ทีละขั้น"],
+  ["ES2026 · JSON", "ตามสไลด์ JSON.rawJSON() ถูกยกเพื่อช่วยเรื่องใด?", "ข้อมูลตัวเลขขนาดใหญ่มากใน JSON", "การเติม string ด้านหน้า", "DOM event", "Set intersection", "สไลด์จัด rawJSON ในหัวข้อ high-precision JSON"],
+  ["ES2026 · BINARY", "ตามสไลด์เมธอด Base64/hex สำหรับ Uint8Array ใช้กับอะไร?", "การเข้ารหัสข้อมูลไบนารี", "การสร้าง HTML class", "การจัดการ Promise state", "การวน Map", "หัวข้อนี้เกี่ยวกับการแทนข้อมูลไบนารีเป็น Base64 หรือ hexadecimal"]
+]);
+
+const part2Set2 = fromRows([
+  ["FUNCTIONS", "function f(){ console.log(\"Hi\"); } เมื่อเรียก f() ค่า return เป็นอะไร?", "undefined", "\"Hi\"", "true", "null", "ฟังก์ชันที่ไม่มี return จะไม่ส่งผลลัพธ์กลับ"],
+  ["FUNCTIONS", "ข้อมูลที่ส่งให้ function ตอนเรียกใช้งานเรียกว่าอะไร?", "arguments", "CSS rules", "DOM nodes เสมอ", "classes เท่านั้น", "สไลด์เรียกข้อมูลที่ส่งให้ฟังก์ชันว่า parameters หรือ arguments"],
+  ["ARROW FUNCTIONS", "Arrow function แบบหลายบรรทัดที่ใช้ { } ต้องทำอย่างไรหากจะส่งค่ากลับ?", "เขียน return ชัดเจน", "ใช้ break", "ใช้ extends", "ใช้ addEventListener", "ตัวอย่าง arrow function หลายบรรทัดใช้ return result"],
+  ["CONSTRUCTORS", "Constructor function มีประโยชน์อย่างไรเมื่อสร้าง object หลายตัว?", "ทำให้มีชุด properties สอดคล้องกัน", "บังคับให้ทุก object เป็น array", "ลบทุก method", "เปลี่ยนเป็น HTML", "สไลด์ใช้ constructor เพื่อสร้าง object ที่มีชุด properties เหมือนกัน"],
+  ["CONSTRUCTORS", "หลังสร้าง object ด้วย constructor สามารถเพิ่ม property ใหม่ภายหลังได้หรือไม่?", "ได้", "ไม่ได้เลย", "ได้เฉพาะ string", "ได้เฉพาะใน class", "สไลด์ระบุว่าเพิ่ม property ให้ object ระหว่างการทำงานได้"],
+  ["FIRST-CLASS", "Function สามารถเก็บไว้ที่ใดตามแนวคิด first-class functions?", "ใน array", "เฉพาะใน CSS", "เฉพาะใน <title>", "เฉพาะใน cookie", "สไลด์ยกตัวอย่างการเก็บ function ใน data structure เช่น array"],
+  ["HIGHER-ORDER", "[2,7,9].map(n=>n*n) ให้ค่าใด?", "[4,49,81]", "[2,7,9]", "[true,true,true]", "[2,14,18]", "map เรียก function กับทุกสมาชิกและสร้างผลลัพธ์ใหม่"],
+  ["HIGHER-ORDER", "[2,7,9,10].filter(n=>n%2===0) ได้อะไร?", "[2,10]", "[7,9]", "[2,7,9,10]", "[]", "filter เก็บเฉพาะสมาชิกที่ผ่านเงื่อนไขเลขคู่"],
+  ["CALLBACKS", "setTimeout(greet, 2000) ในตัวอย่างกำหนดเวลาเท่าใด?", "2 วินาที", "2000 วินาที", "2 มิลลิวินาที", "20 วินาที", "2000 มิลลิวินาทีเท่ากับ 2 วินาที"],
+  ["SCOPE", "ตัวแปรที่ประกาศนอก function มี scope แบบใดตามสไลด์?", "global", "local ภายใน function เท่านั้น", "block เฉพาะ if", "เฉพาะ constructor", "สไลด์อธิบายว่าตัวแปรนอก function เข้าถึงได้ทั่วโค้ดของหน้าเว็บ"],
+  ["SCOPE", "ตัวแปรที่ประกาศใน function โดยปกติเข้าถึงจากที่ใด?", "ภายใน function นั้น", "ทุกไฟล์ CSS", "ทุกหน้าเว็บ", "DOM เท่านั้น", "สไลด์เรียกเป็น local variable ซึ่งมี scope ใน function"],
+  ["SCOPE", "ถ้าตัวแปร global และ local มีชื่อเดียวกัน ภายใน function จะใช้ตัวใด?", "local", "global", "ทั้งสองพร้อมกัน", "undefined เสมอ", "สไลด์ระบุว่าตัวแปร local จะถูกพิจารณาในกรณีชื่อซ้ำ"],
+  ["SCOPE", "อายุของ global variable ตามสไลด์สิ้นสุดเมื่อใด?", "เมื่อปิดหน้าเว็บ", "เมื่อจบ if", "เมื่อจบ loop", "เมื่อเรียก console.log", "สไลด์ระบุ lifetime ตั้งแต่ประกาศจนหน้าเว็บปิด"],
+  ["CLOSURES", "function outer(name){return ()=>name;} แล้วเรียก outer(\"Ann\") function ที่คืนมาจะจำค่าใด?", "\"Ann\"", "undefined", "null", "\"outer\"", "closure เก็บการอ้างอิงตัวแปร name จาก function ด้านนอก"],
+  ["OOP", "ใน class คำว่า property ใช้แทนสิ่งใด?", "ข้อมูลหรือลักษณะของ object", "เหตุการณ์ mouse เท่านั้น", "ไฟล์ JavaScript", "คำสั่งวนลูป", "ตัวอย่าง Instructor มี firstName, lastName, subjects เป็น properties"],
+  ["OOP", "การใช้ new Instructor(...) เรียกขั้นตอนสร้าง object ว่าอะไร?", "instantiation", "iteration", "concatenation", "validation", "การสร้าง object จาก class คือ instantiation"],
+  ["OOP", "constructor ใน class Instructor ทำหน้าที่หลักใด?", "กำหนดค่าเริ่มต้นให้ properties", "ลบ class", "จับ event click", "สร้าง CSS selector", "constructor รับค่ามาใส่ properties ของ object ใหม่"],
+  ["OOP", "ถ้า obj.firstName = \"Pa\" คำสั่งนี้ทำอะไร?", "เปลี่ยนค่า property firstName", "เรียก method firstName", "สร้าง subclass", "ลบ object", "การกำหนดค่าผ่าน dot notation เปลี่ยน property ของ object"],
+  ["OOP", "obj.sayHello() เป็นการทำอะไร?", "เรียก method ของ object", "อ่าน property อย่างเดียว", "สร้าง class", "ลบ node", "วงเล็บหลังชื่อบอกว่าเรียก method"],
+  ["INHERITANCE", "UnivInstructor มี method เฉพาะชื่อ getUniversity() ในสไลด์ สิ่งนี้แสดงอะไร?", "subclass เพิ่มความสามารถของตนเอง", "superclass ถูกลบ", "DOM ถูกสร้างใหม่", "constructor หายไป", "subclass สืบทอดของเดิมและเพิ่ม method ที่มีเฉพาะตนได้"],
+  ["INHERITANCE", "ใน subclass คำสั่ง super(...) ส่งค่าให้ที่ใด?", "constructor ของ superclass", "browser console", "CSS file", "event listener", "super เรียก constructor ของ class แม่"],
+  ["DOM", "DOM ในสไลด์แบ่งเป็น Core DOM, XML DOM และอะไรอีกส่วน?", "HTML DOM", "Array DOM", "Promise DOM", "Math DOM", "สไลด์แจกแจง DOM สามส่วนคือ Core, XML และ HTML"],
+  ["DOM", "จากผัง HTML DOM ในสไลด์ root element คือแท็กใด?", "<html>", "<body>", "<h1>", "<p>", "ผังต้นไม้ระบุ <html> เป็น root element"],
+  ["DOM", "Node ที่แทนเอกสารทั้งฉบับเรียกว่าอะไร?", "document node", "text node", "attribute node", "comment node", "สไลด์ระบุว่าเอกสารทั้งฉบับเป็น document node"],
+  ["DOM", "แท็ก <p> ใน DOM เป็น node ชนิดใด?", "element node", "text node", "attribute node", "document node", "ทุก HTML tag เป็น element node"],
+  ["DOM", "align ใน <p align=\"left\"> เป็น node ชนิดใดตามสไลด์?", "attribute node", "text node", "document node", "comment node", "HTML attribute เป็น attribute node"],
+  ["DOM", "<h1> และ <p> ที่เป็นลูกของ <body> เหมือนกัน มีความสัมพันธ์ใด?", "siblings", "ancestor กับ descendant", "เป็น document node ทั้งคู่", "ไม่มีความสัมพันธ์", "ผังสไลด์ชี้ว่า h1 และ p เป็น sibling nodes"],
+  ["DOM SELECTORS", "document.getElementsByClassName(\"colors\") เลือกอะไร?", "element หลายตัวที่มี class colors", "element ตัวแรกเท่านั้น", "เฉพาะ id colors", "ข้อความ colors", "เมธอดนี้คืน collection ของ element ที่มี class ตรงกัน"],
+  ["DOM SELECTORS", "document.getElementsByTagName(\"span\") เลือกอะไร?", "element span ทุกตัว", "span ตัวแรกเท่านั้น", "id span", "class span", "เมธอดนี้คืน collection ของ tag ที่ระบุ"],
+  ["DOM CONTENT", "element.textContent ใช้กับอะไร?", "อ่านหรือกำหนดข้อความของ element", "ตั้งค่าเวลา", "สร้าง class ใหม่", "ลบทั้งหน้า", "textContent ใช้อ่านหรือเปลี่ยนข้อความของ node และลูกของมัน"]
+]);
+
+const part2Set3 = fromRows([
+  ["DOM SELECTORS", "document.querySelector(\".item\") คืนอะไร?", "element ตัวแรกที่ตรง selector", "ทุก element ที่ตรง selector", "จำนวน element", "เฉพาะข้อความ", "querySelector คืน element ตัวแรกที่ตรง CSS selector"],
+  ["DOM SELECTORS", "document.querySelectorAll(\"p\") คืนข้อมูลแบบใดตามสไลด์?", "static NodeList ของ element ที่ตรง", "element ตัวแรก", "string เดียว", "Boolean", "สไลด์ระบุว่า querySelectorAll คืน static NodeList"],
+  ["DOM NODES", "node.childNodes คืนอะไรตามสไลด์?", "live NodeList ของลูกทั้งหมด", "ลูกตัวแรกเท่านั้น", "parent node", "CSS class", "childNodes คืนรายการลูกโดยตรงแบบ live"],
+  ["DOM NODES", "node.firstChild ใช้ดูอะไร?", "ลูกโดยตรงตัวแรก", "parent node", "sibling ตัวท้าย", "attribute ตัวแรก", "firstChild คืนลูกโดยตรงตัวแรกหรือ null ถ้าไม่มี"],
+  ["DOM NODES", "node.nodeValue เกี่ยวกับอะไร?", "ค่าของ node ปัจจุบัน", "จำนวน element ในเอกสาร", "ขนาดหน้าจอ", "ชื่อ class", "สไลด์ระบุ nodeValue ใช้อ่านหรือกำหนดค่าของ node"],
+  ["DOM CREATE", "document.createTextNode(\"Hi\") สร้างอะไร?", "text node", "element <Hi>", "attribute", "event listener", "createTextNode ใช้สร้าง node ข้อความ"],
+  ["DOM CREATE", "parent.appendChild(child) เพิ่ม child ที่ตำแหน่งใด?", "ท้ายสุดของลูกใน parent", "ก่อน parent", "ต้นเอกสารเสมอ", "แทน parent", "appendChild เพิ่ม node เป็นลูกตัวท้าย"],
+  ["DOM REMOVE", "parent.removeChild(child) ใช้ทำอะไร?", "ลบ child ที่เลือกจาก parent", "ลบ parent ทั้งหน้า", "สร้าง child ใหม่", "เปลี่ยนสี child", "removeChild ลบ child node จาก parent"],
+  ["DOM ATTRIBUTES", "element.setAttribute(\"class\",\"colors\") ทำอะไร?", "กำหนด class attribute เป็น colors", "อ่านค่า class เท่านั้น", "ลบ element", "เพิ่ม event click", "setAttribute ตั้งชื่อและค่า attribute ให้ element"],
+  ["EVENTS", "onclick เกิดเมื่อใด?", "ผู้ใช้คลิกเมาส์", "หน้าเว็บโหลด", "กดปุ่มคีย์บอร์ด", "ข้อมูลเปลี่ยนโดยไม่คลิก", "onclick เป็น event จากการคลิก"],
+  ["EVENTS", "onchange ในตาราง event เกี่ยวกับอะไร?", "ค่าที่เลือกหรือกรอกเปลี่ยนแล้ว element เสีย focus", "เมาส์เข้า element", "เอกสารโหลด", "กดส่ง form", "สไลด์ยก onchange สำหรับ select หรือ text input ที่เปลี่ยนค่า"],
+  ["EVENTS", "onfocus เกิดเมื่อใด?", "form element ได้รับ focus", "เมาส์ออกจาก element", "ปิดหน้า", "reset form", "onfocus ทำงานเมื่อ form element ได้ focus"],
+  ["EVENTS", "onkeydown เกิดเมื่อใด?", "เริ่มกดปุ่มคีย์บอร์ดลง", "ปล่อยปุ่มคีย์บอร์ด", "เลื่อนเมาส์", "ส่ง form", "onkeydown คือจังหวะกดปุ่มลง"],
+  ["EVENTS", "onload เกิดเมื่อใด?", "element และลูกโหลดเสร็จ", "เมาส์คลิกสองครั้ง", "เลือกข้อความ", "ขนาดหน้าต่างเปลี่ยน", "ตารางสไลด์อธิบาย onload เมื่อ element และลูกโหลดแล้ว"],
+  ["EVENTS", "onsubmit เกิดเมื่อใด?", "ส่ง form", "กดปุ่มเมาส์ลง", "เปลี่ยนสี div", "เปิด console", "onsubmit ทำงานเมื่อ form ถูกส่ง"],
+  ["MOUSE EVENTS", "onmouseover เกิดเมื่อใด?", "เมาส์เข้าเขต element", "เมาส์ออกจาก element", "กดปุ่มเมาส์", "ปล่อยปุ่มเมาส์", "onmouseover ทำงานเมื่อ pointer เข้า element"],
+  ["MOUSE EVENTS", "onmouseout เกิดเมื่อใด?", "เมาส์ออกจาก element", "เมาส์เข้า element", "เมาส์ดับเบิลคลิก", "เมาส์หยุดนิ่ง", "onmouseout ทำงานเมื่อ pointer ออก"],
+  ["MOUSE EVENTS", "onmousedown เกิดเมื่อใด?", "กดปุ่มเมาส์ลง", "ปล่อยปุ่มเมาส์", "เมาส์ออกจาก element", "หน้าเว็บโหลด", "onmousedown คือจังหวะกดปุ่มเมาส์"],
+  ["MOUSE EVENTS", "onmouseup เกิดเมื่อใด?", "ปล่อยปุ่มเมาส์", "กดปุ่มเมาส์ลง", "เมาส์เข้าพื้นที่", "ส่ง form", "onmouseup คือจังหวะปล่อยปุ่มเมาส์"],
+  ["EVENT LISTENERS", "element.addEventListener(\"click\", handler) จะเรียก handler เมื่อใด?", "เมื่อ click เกิดกับ element", "ทันทีที่ประกาศเสมอ", "เมื่อสร้าง class", "เมื่อปิดหน้าเท่านั้น", "addEventListener ผูก handler กับ event ที่ระบุ"],
+  ["DOM FORMS", "ตัวอย่างบวกเลขในสไลด์ใช้ parseFloat กับ input.value เพื่ออะไร?", "แปลงข้อความจากช่องกรอกเป็นตัวเลข", "ทำให้ input หายไป", "เปลี่ยนสีตัวเลข", "สร้าง Promise", "ค่าจาก input เป็นข้อความ จึงแปลงก่อนนำไปบวก"],
+  ["DOM FORMS", "หลังคำนวณผลบวก ตัวอย่างใส่ผลลงช่อง sum ด้วย property ใด?", ".value", ".length", ".parentNode", ".className", "ตัวอย่างกำหนด document.getElementById('sum').value = sum"],
+  ["FUNCTIONS", "function showMessage(){alert(\"Hi\")} เป็นฟังก์ชันประเภทใดตามสไลด์?", "ไม่คืนค่า", "คืนค่า Number", "constructor", "async function", "ไม่มีคำสั่ง return ในฟังก์ชัน"],
+  ["ARROW FUNCTIONS", "const sum=(a,b)=>a+b; sum(4,5) ได้อะไร?", "9", "45", "1", "undefined", "arrow function คืนผลบวก 4+5"],
+  ["FIRST-CLASS", "ฟังก์ชันหนึ่ง return ()=>console.log(name) แสดงความสามารถใด?", "คืน function จาก function", "สร้าง DOM node", "สร้าง class", "ลบ callback", "first-class function สามารถถูกคืนเป็นผลลัพธ์ของอีก function"],
+  ["SCOPE", "ตัวแปรใน <script type=\"module\"> เข้าถึงจาก script ปกติอีกแท็กโดยตรงได้หรือไม่?", "ไม่ได้", "ได้ทุกกรณี", "ได้เฉพาะเมื่อชื่อสั้น", "ได้เฉพาะตัวเลข", "สไลด์แสดงว่าตัวแปรใน module มี scope ของ module เอง"],
+  ["SCOPE", "const name ที่ประกาศใน if block แล้วอ่านข้างนอก block จะเกิดอะไร?", "ReferenceError", "ได้ค่าเดิม", "ได้ null", "ได้ false", "const มี block scope จึงอ่านนอกบล็อกไม่ได้"],
+  ["SCOPE", "var name ที่ประกาศใน if block ภายใน function แล้วอ่านต่อใน function เดียวกันได้หรือไม่?", "ได้", "ไม่ได้", "ได้เฉพาะใน HTML", "ได้เฉพาะเมื่อใช้ new", "var มี function scope จึงยังอยู่หลังจบบล็อก if"],
+  ["INHERITANCE", "Object ของ UnivInstructor เรียก sayHello() จาก Instructor ได้เพราะอะไร?", "สืบทอด method จาก superclass", "มี CSS ชื่อเดียวกัน", "เกิด event click", "เป็น array", "subclass รับ methods ของ superclass มาใช้"],
+  ["DOM", "JavaScript ใช้ DOM เปลี่ยนสิ่งใดบนหน้าเว็บได้ตามสไลด์?", "element, attribute, event และ CSS", "เฉพาะข้อความใน title", "เฉพาะไฟล์ภาพ", "เฉพาะชื่อโดเมน", "สไลด์ระบุว่า document object ช่วยจัดการส่วนต่าง ๆ ของ HTML รวมทั้ง CSS และ events"]
+]);
+
+const readingNotes = [
+  {
+    label: "Lecture 06 · JavaScript Part 1",
+    lead: "เริ่มจากบทบาทของ JavaScript ในหน้าเว็บ แล้วต่อด้วยตัวแปร ข้อมูล ตัวดำเนินการ และโครงสร้างควบคุม ก่อนนำทุกอย่างไปประกอบเป็นเกม Tic Tac Toe",
+    source: "ITDS241-Lecture06-JavaScript Part 1.pdf",
+    sections: [
+      {
+        title: "JavaScript ทำหน้าที่อะไรในหน้าเว็บ",
+        pages: "สไลด์ 18–24",
+        paragraphs: [
+          "เว็บเพจประกอบด้วย HTML สำหรับเนื้อหาและโครงสร้าง, CSS สำหรับรูปลักษณ์ และ JavaScript สำหรับพฤติกรรมที่เปลี่ยนตามการกระทำของผู้ใช้ เช่น คลิกปุ่มแล้วข้อความเปลี่ยน JavaScript จึงทำให้หน้าเว็บโต้ตอบได้",
+          "เขียนโค้ดไว้ระหว่างแท็ก <script> ใน HTML ได้ หรือแยกไว้ในไฟล์ .js แล้วเชื่อมด้วย <script src=\"myScript.js\"><\/script> ไฟล์ .js ไม่ต้องมีแท็ก <script> ครอบอีกครั้ง"
+        ],
+        code: '<script src="myScript.js"><\/script>\n// ใน myScript.js\nconsole.log("Hello World");',
+        tip: "จำให้แยก: HTML = โครงสร้าง, CSS = รูปแบบ, JavaScript = การทำงานและการโต้ตอบ"
+      },
+      {
+        title: "ตัวแปร การประกาศ และการกำหนดค่า",
+        pages: "สไลด์ 25–35",
+        paragraphs: [
+          "ตัวแปรคือชื่อที่ใช้อ้างถึงค่าที่โปรแกรมเก็บไว้ชั่วคราว การประกาศสร้างชื่อ ส่วนเครื่องหมาย = ใช้กำหนดค่าจากด้านขวาให้ตัวแปรด้านซ้าย ไม่ใช่เครื่องหมายเท่ากันแบบคณิตศาสตร์",
+          "สไลด์เปรียบเทียบ var, let และ const: let เปลี่ยนค่าได้แต่ประกาศชื่อซ้ำในบล็อกเดียวกันไม่ได้; const ต้องมีค่าเริ่มต้นและกำหนดค่าใหม่ให้ชื่อนั้นไม่ได้; var มีขอบเขตต่างจาก let และ const จึงอาจทำให้ตัวแปรในบล็อกกระทบค่าภายนอกได้"
+        ],
+        code: 'let score = 0;\nscore = score + 1;  // เปลี่ยนค่าได้\nconst player = "X"; // กำหนดค่าเริ่มต้นแล้ว',
+        bullets: [
+          "ชื่อตัวแปรตามกฎในสไลด์ต้องไม่เว้นวรรค และไม่ใช้คำสงวนของ JavaScript",
+          "console.log(value) แสดงค่าใน console เพื่อดูผลระหว่างพัฒนา"
+        ],
+        tip: "อย่าสับสนระหว่าง “ประกาศซ้ำ” กับ “กำหนดค่าใหม่”: let ทำอย่างหลังได้ แต่ทำอย่างแรกในบล็อกเดิมไม่ได้"
+      },
+      {
+        title: "ชนิดข้อมูลและ Object",
+        pages: "สไลด์ 37–48",
+        paragraphs: [
+          "สไลด์แบ่งข้อมูลพื้นฐานที่กล่าวถึงเป็น Boolean (true/false), Number, String, null, undefined และ Object โดย null คือการตั้งใจระบุว่าไม่มีค่า ส่วน undefined มักหมายถึงตัวแปรที่ยังไม่ได้กำหนดค่า",
+          "Object เก็บข้อมูลเป็น property เช่น person.age เข้าถึงด้วยจุดได้เมื่อชื่อ property ปกติ หากชื่อมีช่องว่างหรือชื่อถูกเก็บในตัวแปร ให้ใช้วงเล็บเหลี่ยม เช่น person[\"parking permit\"] การคัดลอกตัวแปรที่อ้างถึง object เดิมทำให้ทั้งสองชื่อชี้ไปยัง object เดียวกัน"
+        ],
+        code: 'const person = { name: "Ann", age: 20 };\nperson.age = 21;\nperson["parking permit"] = "blue";',
+        bullets: [
+          "Array เริ่ม index ที่ 0; length คือจำนวนสมาชิก, push() เพิ่มท้าย, pop() เอาตัวท้ายออก, indexOf() หาตำแหน่งแรก",
+          "forEach() เรียกฟังก์ชันกับแต่ละสมาชิก; map() สร้าง array ใหม่จากผลลัพธ์; filter() คัดสมาชิกที่ผ่านเงื่อนไข",
+          "String ใช้ + ต่อข้อความ และมี length, charAt(), split(), substring()",
+          "Math มี Math.PI, Math.pow(), Math.round(), Math.abs(); Date แทนเวลาซึ่งอิงจำนวนมิลลิวินาทีจาก 1 มกราคม 1970 UTC"
+        ],
+        tip: "null กับ undefined ไม่ใช่สิ่งเดียวกัน และ array[0] คือสมาชิกตัวแรก"
+      },
+      {
+        title: "ตัวดำเนินการและลำดับการคำนวณ",
+        pages: "สไลด์ 49–56",
+        paragraphs: [
+          "ตัวดำเนินการเลขคณิตมี +, -, *, /, % (เศษจากการหาร), ** (ยกกำลัง), ++ และ -- ส่วน +=, -= และแบบคล้ายกันคือการคำนวณแล้วกำหนดค่ากลับ เช่น x += 2 เทียบได้กับ x = x + 2",
+          "การเปรียบเทียบแบบ == แปลงชนิดก่อนเทียบ แต่ === ต้องมีทั้งชนิดและค่าเท่ากัน เช่น \"1\" == 1 เป็น true แต่ \"1\" === 1 เป็น false ตัวดำเนินการตรรกะ &&, || และ ! ใช้รวมและกลับเงื่อนไข"
+        ],
+        code: '5 % 3          // 2\n"1" == 1       // true\n"1" === 1      // false\n(2 + 3) * 4    // 20',
+        tip: "วงเล็บช่วยกำหนดลำดับก่อนคำนวณ; ถ้าไม่มี วงเล็บจะตามด้วยกำลัง คูณ/หาร/เศษ แล้วจึงบวก/ลบตามลำดับที่สไลด์สรุป"
+      },
+      {
+        title: "เลือกทางเดินด้วยเงื่อนไข",
+        pages: "สไลด์ 57–65",
+        paragraphs: [
+          "if ทำงานเมื่อเงื่อนไขเป็นจริง; if...else เลือกได้สองทาง; else if ใช้ตรวจหลายช่วงตามลำดับ ตัวดำเนินการสามช่อง condition ? a : b เป็นรูปสั้นของการเลือกสองผลลัพธ์",
+          "switch นำค่าของ expression ไปเทียบ case หากไม่มี case ตรงจึงเข้า default คำสั่ง break ใช้หยุดไม่ให้ไหลไปยัง case ถัดไปตามตัวอย่างในสไลด์"
+        ],
+        code: 'const mark = 75;\nconst grade = mark >= 80 ? "A" : mark >= 70 ? "B" : "C or below";\n// grade เป็น "B"',
+        tip: "เวลาไล่ else if ให้ตรวจจากบนลงล่าง และเมื่อพบทางที่เข้าเงื่อนไขแล้วจะไม่ไปตรวจทางถัดไป"
+      },
+      {
+        title: "ทำซ้ำด้วยลูป",
+        pages: "สไลด์ 66–77",
+        paragraphs: [
+          "while ตรวจเงื่อนไขก่อนทำ จึงอาจไม่ทำเลย; do...while ทำก่อนตรวจ จึงทำอย่างน้อยหนึ่งครั้ง; for รวมค่าเริ่มต้น เงื่อนไข และการเปลี่ยนค่ารอบไว้ในหัวลูป ต้องมีทางให้เงื่อนไขกลายเป็นเท็จเพื่อไม่ให้วนไม่สิ้นสุด",
+          "break ออกจากลูปหรือ switch ส่วน continue ข้ามส่วนที่เหลือของรอบปัจจุบันไปเริ่มรอบถัดไป สไลด์แสดง label เพื่อระบุลูปเป้าหมายของ break/continue และแยกลูปแบบ counter ที่รู้ขอบเขตนับ กับ sentinel ที่หยุดเมื่อเจอค่าหรือสัญญาณกำหนด"
+        ],
+        code: 'for (let i = 0; i < 3; i++) {\n  console.log(i); // 0, 1, 2\n}',
+        bullets: [
+          "วน array ด้วย index ตั้งแต่ 0 ถึง length - 1",
+          "วน property ของ object ด้วย for...in ตามตัวอย่างในสไลด์",
+          "โครงสร้างควบคุมซ้อนกันได้ เช่น if อยู่ใน for"
+        ],
+        tip: "ถ้าต้องอ่านผลลูป ให้จดค่าเริ่มต้น → เช็กเงื่อนไข → ทำคำสั่ง → เปลี่ยนค่าตัวนับทีละรอบ"
+      },
+      {
+        title: "ตัวอย่างรวม: Tic Tac Toe",
+        pages: "สไลด์ 3–15",
+        paragraphs: [
+          "ตัวอย่างเกมใช้ HTML สร้างตาราง 3×3 ช่อง ข้อความสถานะ และปุ่มเริ่มใหม่; CSS จัดหน้าตาราง; JavaScript รับการคลิก เก็บสถานะ และอัปเดตหน้าจอ",
+          "เมื่อคลิกช่อง โปรแกรมอ่าน data-cell-index แล้วตรวจว่าช่องยังว่างและเกมยังทำงาน จึงบันทึก X หรือ O ใน gameState พร้อมแสดงบนช่องนั้น จากนั้นเทียบชุดตำแหน่งชนะทั้งแถว คอลัมน์ และแนวทแยง หากไม่ชนะและไม่มีช่องว่างคือเสมอ มิฉะนั้นเปลี่ยนผู้เล่น"
+        ],
+        bullets: [
+          "handleCellClick ตรวจความถูกต้องของการคลิกก่อนเดินเกม",
+          "handleCellPlayed อัปเดตทั้งข้อมูลเกมและช่องบนหน้าเว็บ",
+          "handleResultValidation ตรวจชนะหรือเสมอ; handlePlayerChange สลับ X/O",
+          "handleRestartGame ล้างตาราง รีเซ็ต gameState และเริ่มที่ X"
+        ],
+        tip: "ภาพรวมที่ควรเข้าใจ: event → ตรวจเงื่อนไข → เปลี่ยนข้อมูล → ตรวจผล → อัปเดตหน้าจอ"
+      }
+    ],
+    recap: ["HTML / CSS / JavaScript มีคนละหน้าที่", "= คือกำหนดค่า; === เทียบชนิดและค่า", "null ต่างจาก undefined", "while อาจไม่ทำเลย แต่ do...while ทำอย่างน้อยหนึ่งครั้ง", "เกมต้องเก็บ state แยกจากสิ่งที่แสดงบนหน้าเว็บ"]
+  },
+  {
+    label: "ECMAScript Versions",
+    lead: "อ่านเป็นเส้นเวลาของฟีเจอร์ ตั้งแต่ ES2015 ไปจนถึงหัวข้อ ES2026 ที่สไลด์นำเสนอ พร้อมแยกฟีเจอร์มาตรฐานออกจากรายการที่สไลด์ระบุว่ายังเป็น proposal",
+    source: "ITDS241-ECMAScript Version_Updated_2026Aug06.pdf",
+    sections: [
+      {
+        title: "ECMAScript กับ JavaScript",
+        pages: "สไลด์ 4–9",
+        paragraphs: [
+          "ECMAScript (ES) คือข้อกำหนดของภาษา ส่วน JavaScript เป็นการนำข้อกำหนดนี้ไปใช้ที่แพร่หลาย สไลด์ใช้ชื่อรุ่นรายปี เช่น ES2015, ES2016 ไปจนถึงหัวข้อ ES2026",
+          "ES2015 หรือ ES6 เป็นจุดเริ่มของหลายแนวคิดที่ใช้บ่อย ได้แก่ let/const, arrow function, class, Promise, template literal, default parameter, spread, destructuring, for...of, Map และ Set"
+        ],
+        tip: "ชื่อ ES6 และ ES2015 ในสไลด์หมายถึงรุ่นเดียวกัน; อ่านชื่อฟีเจอร์พร้อมดูว่าช่วยแก้ปัญหาใด"
+      },
+      {
+        title: "ES2015: Promise และการจัดการงานที่รอผล",
+        pages: "สไลด์ 10–20",
+        paragraphs: [
+          "Promise แทนผลลัพธ์ของงานที่อาจเสร็จภายหลัง มีสถานะ pending ระหว่างรอ, fulfilled เมื่อสำเร็จ และ rejected เมื่อล้มเหลว ฝั่งสร้าง Promise เรียก resolve(value) หรือ reject(reason) เพื่อบอกผล",
+          "ฝั่งใช้งานต่อด้วย .then() สำหรับค่าที่สำเร็จ, .catch() สำหรับข้อผิดพลาด และ .finally() สำหรับงานที่ทำหลังเสร็จ ไม่ว่างานจะสำเร็จหรือล้มเหลว"
+        ],
+        code: 'const task = new Promise((resolve, reject) => {\n  resolve("done");\n});\ntask.then(value => console.log(value));',
+        tip: "Promise เป็นตัวแทนผลในอนาคต ไม่ใช่ค่าผลลัพธ์ที่ได้ทันทีตอนสร้าง"
+      },
+      {
+        title: "ES2015: เขียนโค้ดให้สั้นและจัดข้อมูลสะดวกขึ้น",
+        pages: "สไลด์ 21–33",
+        paragraphs: [
+          "Template literal ใช้ backtick และแทรกนิพจน์ด้วย ${...}; default parameter กำหนดค่าเริ่มต้นของอาร์กิวเมนต์; spread (...) คลี่สมาชิกของ array, string หรือ object; destructuring ดึงค่าจาก array/object มาใส่ตัวแปร",
+          "Rest parameter ใช้ ... เหมือนกันแต่ทำงานอีกทิศทาง คือรวบอาร์กิวเมนต์หลายตัวเป็นชุดเดียว for...of วนค่าของ iterable โดยสไลด์เปรียบเทียบว่ารองรับ break/continue ต่างจาก forEach() Map เก็บคู่ key-value ส่วน Set เก็บค่าที่ไม่ซ้ำ"
+        ],
+        code: 'const name = "Ann";\nconst text = `Hi ${name}`;\nconst nums = [1, 2];\nconst copy = [...nums];\nconst [first] = nums; // 1',
+        bullets: ["Map ใช้ key หลายชนิดและวนรายการได้", "WeakMap ในบริบท ES2015 ของสไลด์เน้น key ที่เป็น object และพฤติกรรมเรื่อง garbage collection", "สไลด์ยังยก String.repeat() สำหรับทำข้อความซ้ำ และ Object.is() สำหรับเปรียบเทียบค่าสองค่า"],
+        tip: "spread = คลี่ออก; rest = รวบเข้า แม้ใช้เครื่องหมาย ... เหมือนกัน"
+      },
+      {
+        title: "ES2016–ES2018: การค้นหา ค่าใน Object และ async",
+        pages: "สไลด์ 34–50",
+        paragraphs: [
+          "ES2016 เพิ่ม Array.includes() เพื่อถามว่ามีค่านั้นหรือไม่ และ ** เพื่อยกกำลัง ES2017 เพิ่ม padStart()/padEnd() เติมข้อความ, Object.values() คืนค่า property, Object.entries() คืนคู่ key-value, Object.getOwnPropertyDescriptors() คืนคำอธิบาย properties ของ object, ตัวคั่น comma ท้ายรายการ และ async/await ซึ่งทำงานกับ Promise",
+          "ES2018 ในสไลด์เน้น rest/spread properties สำหรับ object และ for await...of สำหรับวนข้อมูลแบบ asynchronous"
+        ],
+        code: '[1, 2, 3].includes(2); // true\n2 ** 3;             // 8\nObject.entries({a: 1}); // [["a", 1]]',
+        tip: "Object.values() ได้เฉพาะค่าของ property; Object.entries() ได้เป็นคู่ [key, value]"
+      },
+      {
+        title: "ES2019–ES2020: จัดรูปข้อมูลและรับมือ null",
+        pages: "สไลด์ 51–63",
+        paragraphs: [
+          "ES2019 มี flat() คลี่ array ที่ซ้อนกัน, flatMap() map แล้วคลี่หนึ่งระดับ, Object.fromEntries() สร้าง object จากคู่ key-value, trimStart()/trimEnd() ลบช่องว่างด้านหน้า/ท้ายข้อความ",
+          "ES2020 มี BigInt สำหรับจำนวนเต็มขนาดใหญ่, ?? ให้ค่าเริ่มต้นเมื่อค่าซ้ายเป็น null หรือ undefined, ?. อ่าน property โดยไม่เกิดข้อผิดพลาดเมื่อค่าก่อนหน้าเป็น null/undefined และ matchAll() หาคู่ที่ตรง regex หลายตำแหน่ง"
+        ],
+        code: 'const user = null;\nuser?.name;         // undefined\nuser?.name ?? "Guest"; // "Guest"',
+        tip: "?? ไม่เหมือน ||: ค่า 0 และข้อความว่างไม่ทำให้ ?? เลือกค่าขวา"
+      },
+      {
+        title: "ES2021–ES2023: assignment, การค้นย้อน และ array แบบคืนสำเนา",
+        pages: "สไลด์ 64–81",
+        paragraphs: [
+          "ES2021 เพิ่มตัวคั่นหลักตัวเลข _, replaceAll() และการกำหนดค่าร่วมกับตรรกะ: &&=, ||=, ??= สไลด์ยังกล่าวถึง WeakRef และ Finalizers",
+          "ES2022 เน้น .at() สำหรับเข้าถึงตำแหน่ง, Object.hasOwn() ตรวจ property ที่ object มีเอง, error cause และ top-level await ใน module ส่วน ES2023 มี findLast()/findLastIndex() ที่ค้นย้อนจากท้าย array, การใช้ Symbol เป็น key ของ WeakMap และเมธอดแบบ change by copy เช่น toReversed(), toSorted(), toSpliced(), with() ที่คืน array ใหม่"
+        ],
+        code: 'const list = [3, 1, 2];\nlist.findLast(x => x > 1); // 2\nlist.toSorted();             // array ใหม่',
+        tip: "findLast() คืนสมาชิก ส่วน findLastIndex() คืนตำแหน่ง; กลุ่ม to... แบบ copy ไม่แก้ array ต้นฉบับ"
+      },
+      {
+        title: "หัวข้อ ES2024 ในสไลด์: แยกฟีเจอร์กับ proposal",
+        pages: "สไลด์ 82–100",
+        paragraphs: [
+          "สไลด์ยกเรื่อง well-formed Unicode strings และ toWellFormed() เพื่อจัดการข้อความ Unicode รวมถึงหัวข้อ shared memory และ top-level await",
+          "สไลด์ระบุชัดว่า pipeline operator (|>) ยังเป็นข้อเสนอ stage 1, records/tuples ยังไม่ใช่ JavaScript ทางการ, decorators ยังเป็นข้อเสนอ stage 2 และ Temporal API ยังเป็นข้อเสนอ stage 3 ดังนั้นโค้ดตัวอย่างของหัวข้อเหล่านี้ควรอ่านเพื่อเข้าใจแนวคิด ไม่ควรนำไปสมมติว่ารันได้ในทุกเบราว์เซอร์"
+        ],
+        tip: "เวลาทบทวนบทนี้ ให้จำสถานะ proposal ตามที่สไลด์เขียนไว้ อย่ารวมทุกหัวข้อใต้ ES2024 แล้วสรุปว่าเป็นมาตรฐานทั้งหมด"
+      },
+      {
+        title: "หัวข้อ ES2025 ในสไลด์",
+        pages: "สไลด์ 101–109",
+        paragraphs: [
+          "สไลด์นำเสนอ import attributes / JSON modules เพื่อระบุชนิดข้อมูลนำเข้า, iterator helpers สำหรับประมวลผล iterator แบบค่อยทำ, Set methods/relationships สำหรับ union, intersection, difference และการตรวจความสัมพันธ์ของเซต",
+          "ยังมี RegExp.escape() และส่วนขยาย RegExp, Promise.try() สำหรับห่อฟังก์ชันที่อาจ throw หรือคืน Promise ให้จัดการผลในรูป Promise และ Float16Array สำหรับข้อมูลเลขทศนิยมครึ่งความแม่นยำ"
+        ],
+        code: 'const A = new Set([1, 2]);\nconst B = new Set([2, 3]);\nA.union(B); // Set {1, 2, 3}',
+        tip: "Set เก็บสมาชิกไม่ซ้ำ; union รวมทุกสมาชิก, intersection เอาเฉพาะที่อยู่ทั้งสองฝั่ง"
+      },
+      {
+        title: "หัวข้อ ES2026 ในสไลด์",
+        pages: "สไลด์ 110–123",
+        paragraphs: [
+          "สไลด์กล่าวถึง Math.sumPrecise() เพื่อบวกค่าลอยตัวให้แม่นยำขึ้น, Error.isError() สำหรับตรวจ Error ข้าม realm, Array.fromAsync() สำหรับสร้าง array จากแหล่งข้อมูล asynchronous และ Map.getOrInsert() เพื่ออ่านค่าที่มีอยู่หรือเพิ่มค่าเริ่มต้นเมื่อ key ยังไม่มี",
+          "อีกสองหัวข้อคือ JSON.rawJSON() สำหรับรักษาความแม่นยำของเลขขนาดใหญ่ใน JSON และเมธอด base64/hex ของ Uint8Array สำหรับแปลงข้อมูลไบต์ สไลด์เองระบุว่า Math.sumPrecise() เป็น proposal ใหม่และอาจยังใช้ตรง ๆ ไม่ได้ในทุกเบราว์เซอร์"
+        ],
+        tip: "บทนี้เป็นการสรุปหัวข้อตามสไลด์ ไม่ใช่ตารางยืนยันการรองรับของเบราว์เซอร์; ก่อนทดลองโค้ดรุ่นใหม่ควรตรวจ runtime ที่ใช้"
+      }
+    ],
+    recap: ["ES2015 = Promise, let/const, arrow, spread/rest, destructuring, Map/Set", "ES2016–18 = includes, **, Object.values/entries, async/await, for await...of", "ES2019–20 = flat/flatMap, fromEntries, BigInt, ??, ?.", "ES2021–23 = replaceAll, logical assignment, .at(), hasOwn(), findLast(), array copy methods", "สไลด์ ES2024 มีหลาย proposal; แยกสถานะก่อนจำ", "ES2025–26 อ่านตามหัวข้อในสไลด์และระวังการรองรับของ runtime"]
+  },
+  {
+    label: "Lecture 07 · JavaScript Part 2",
+    lead: "ต่อจากพื้นฐานไปสู่การเขียนฟังก์ชันและ OOP แล้วใช้ DOM กับ events เพื่อให้ JavaScript จัดการหน้าเว็บได้",
+    source: "ITDS241-Lecture07-JavaScript Part 2.pdf",
+    sections: [
+      {
+        title: "ฟังก์ชัน: แบ่งงานและใช้โค้ดซ้ำ",
+        pages: "สไลด์ 3–9",
+        paragraphs: [
+          "ฟังก์ชันรวมคำสั่งสำหรับงานหนึ่ง ๆ ช่วยใช้โค้ดซ้ำ แยกปัญหาเป็นส่วนย่อย และแก้ไขได้ง่ายขึ้น ฟังก์ชันอาจไม่คืนค่า หรือใช้ return ส่งค่ากลับ ผู้เรียกส่งข้อมูลผ่าน argument ไปยัง parameter และตั้งค่า default ให้ parameter ได้",
+          "Arrow function เป็นรูปแบบเขียนฟังก์ชันให้กระชับ ตามตัวอย่างในสไลด์ ถ้ามีนิพจน์เดียวสามารถเขียนให้คืนค่านั้นโดยตรง"
+        ],
+        code: 'function sum(a, b = 0) { return a + b; }\nconst multiply = (a, b) => a * b;\nsum(3, 2);      // 5\nmultiply(3, 2); // 6',
+        tip: "parameter คือชื่อตัวแปรในนิยามฟังก์ชัน; argument คือค่าที่ส่งตอนเรียก"
+      },
+      {
+        title: "Constructor และฟังก์ชันแบบ first-class",
+        pages: "สไลด์ 10–22",
+        paragraphs: [
+          "Constructor function ใช้เป็นแบบสำหรับสร้าง object หลายตัวที่มี property ลักษณะเดียวกัน เรียกด้วย new และใช้ this อ้างถึง object ที่กำลังสร้าง",
+          "JavaScript มองฟังก์ชันเป็นค่าแบบ first-class จึงเก็บในตัวแปร ใส่ array ส่งเป็น argument หรือคืนจากฟังก์ชันอื่นได้ ฟังก์ชันที่รับฟังก์ชันหรือคืนฟังก์ชันเรียกว่า higher-order function ส่วน callback คือฟังก์ชันที่ส่งให้ผู้อื่นเรียกภายหลัง เช่น เมื่อ timer หรือ event เกิด"
+        ],
+        code: 'function Person(name) { this.name = name; }\nconst ann = new Person("Ann");\nsetTimeout(() => console.log(ann.name), 1000);',
+        tip: "higher-order function อธิบายความสัมพันธ์ระหว่างฟังก์ชัน; callback คือฟังก์ชันที่ถูกส่งไปให้เรียก"
+      },
+      {
+        title: "Scope, lifetime และ closure",
+        pages: "สไลด์ 23–30",
+        paragraphs: [
+          "Scope คือบริเวณที่มองเห็นตัวแปร let และ const มี block scope จึงใช้ได้ในบล็อกที่ประกาศ ส่วน var อยู่ใน function scope หรือ global scope ตามบริบท หากเรียกตัวแปรนอกขอบเขตจะเกิด ReferenceError",
+          "Lifetime คือช่วงเวลาที่ตัวแปรยังอยู่ สไลด์เปรียบเทียบตัวแปร global กับ local และแนะนำ module scope ที่แยกขอบเขตของแต่ละ module Closure คือฟังก์ชันที่ยังอ้างถึงตัวแปรจากบริบทภายนอก แม้ฟังก์ชันภายนอกทำงานจบแล้ว"
+        ],
+        code: 'function makeCounter() {\n  let count = 0;\n  return () => ++count;\n}\nconst next = makeCounter();\nnext(); // 1; ครั้งต่อไปได้ 2',
+        tip: "Closure จำค่าได้เพราะฟังก์ชันยังถือการอ้างอิงไปยังตัวแปรภายนอก ไม่ใช่เพราะประกาศตัวแปรใหม่ทุกครั้ง"
+      },
+      {
+        title: "OOP: Class, Object และ Inheritance",
+        pages: "สไลด์ 31–42",
+        paragraphs: [
+          "OOP ใช้ object แทนสิ่งที่มีข้อมูลและพฤติกรรม Class คือแบบกำหนด properties และ methods; object หรือ instance คือสิ่งที่สร้างจาก class พร้อมค่าจริงของแต่ละ property constructor กำหนดค่าเริ่มต้น และใช้ new สร้าง instance",
+          "Inheritance ให้ subclass รับคุณสมบัติและ method จาก superclass โดยใช้ extends และ super ตามตัวอย่างในสไลด์ Polymorphism คือการที่ object ต่างชนิดตอบสนองต่อ method ชื่อเดียวกันได้ตามชนิดของตน"
+        ],
+        code: 'class Person {\n  constructor(name) { this.name = name; }\n  greet() { return `Hi, ${this.name}`; }\n}\nclass Student extends Person {\n  constructor(name, id) { super(name); this.id = id; }\n}',
+        tip: "class = แบบ, object = ตัวจริง, property = ข้อมูล, method = พฤติกรรม"
+      },
+      {
+        title: "DOM: มองหน้า HTML เป็นโครงสร้างต้นไม้",
+        pages: "สไลด์ 43–50",
+        paragraphs: [
+          "Document Object Model (DOM) เป็นทางให้โปรแกรมเข้าถึงและปรับเอกสาร HTML แบบ dynamic หน้าเว็บถูกแทนเป็น tree: ทั้งเอกสารเป็น document node, แท็กเป็น element node, ข้อความในแท็กเป็น text node และยังมี attribute/comment nodes",
+          "เมื่อเลือก node หรือ element ได้แล้ว JavaScript จึงอ่าน เปลี่ยน ลบ หรือเพิ่มเนื้อหาและ attributes บนหน้าเว็บได้ การมองเป็น tree ช่วยเข้าใจความสัมพันธ์ parent, child และ sibling"
+        ],
+        tip: "<p>Hello</p> มี element node สำหรับ <p> และ text node สำหรับคำว่า Hello"
+      },
+      {
+        title: "เลือก เพิ่ม แก้ และลบ Element",
+        pages: "สไลด์ 51–61",
+        paragraphs: [
+          "document.getElementById() เลือก element จาก id; querySelector() เลือกตัวแรกที่ตรง CSS selector; querySelectorAll() เลือกทุกตัวที่ตรง ส่วน getElementsByClassName() และ getElementsByTagName() ใช้เลือกกลุ่มตามชื่อ class หรือ tag",
+          "createElement() และ createTextNode() สร้าง node ใหม่, appendChild() เพิ่มลูกท้าย parent, removeChild() ลบลูก, setAttribute() เปลี่ยน attribute; textContent อ่าน/กำหนดข้อความ ขณะที่ innerHTML อ่าน/กำหนดเนื้อหาเป็น HTML"
+        ],
+        code: 'const box = document.querySelector("#box");\nconst p = document.createElement("p");\np.textContent = "Hello";\nbox.appendChild(p);',
+        tip: "querySelector() ให้ตัวแรก; querySelectorAll() ให้ชุดของตัวที่ตรงทั้งหมด"
+      },
+      {
+        title: "Events: ให้หน้าเว็บตอบสนองต่อผู้ใช้",
+        pages: "สไลด์ 62–67",
+        paragraphs: [
+          "Event คือเหตุการณ์จากผู้ใช้หรือเบราว์เซอร์ เช่น click, change, focus, load, mouseover และ mouseout เมื่อเหตุการณ์เกิดขึ้น ฟังก์ชันที่ผูกไว้จะทำงาน สไลด์แสดงทั้งการใส่ handler ใน HTML และการใช้ addEventListener() ใน JavaScript",
+          "ตัวอย่างบวกเลขบนหน้าเว็บอ่านค่า input ผ่าน .value แล้วคำนวณเมื่อกดปุ่ม อีกตัวอย่างเปลี่ยนสีหรือข้อความตาม mouse events จึงเชื่อม DOM ที่เลือก element กับ event ที่บอกว่าเมื่อใดต้องทำงาน"
+        ],
+        code: 'const button = document.querySelector("#save");\nbutton.addEventListener("click", () => {\n  document.querySelector("#status").textContent = "Saved";\n});',
+        tip: "DOM บอกว่าแก้ส่วนไหน; event บอกว่าให้แก้ตอนไหน; callback คือฟังก์ชันที่ลงมือแก้"
+      }
+    ],
+    recap: ["ฟังก์ชันรับ parameter และอาจ return ค่า", "first-class function ส่งฟังก์ชันเป็นค่าได้; callback คือฟังก์ชันที่ให้เรียกภายหลัง", "let/const มี block scope; closure ยังเข้าถึงตัวแปรภายนอก", "class เป็นแบบ ส่วน object เป็น instance", "DOM เป็น tree ของ nodes; เลือก element แล้วแก้ด้วย methods/properties", "addEventListener() ผูกการทำงานเข้ากับ event"]
+  }
+];
+
+const chapters = [
+  { code: "01", title: "JavaScript Part 1", meta: "Lecture 06 · พื้นฐาน ตัวแปร เงื่อนไข และลูป", sets: [questions, part1Set2, part1Set3] },
+  { code: "02", title: "ECMAScript Versions", meta: "ES2015–ES2026 · ฟีเจอร์สำคัญแต่ละเวอร์ชัน", sets: [ecmaQuestions, ecmaSet2, ecmaSet3] },
+  { code: "03", title: "JavaScript Part 2", meta: "Lecture 07 · Functions, OOP, DOM และ Events", sets: [part2Questions, part2Set2, part2Set3] }
+];
+
+const $ = (id) => document.getElementById(id);
+const screens = [$("intro-screen"), $("reading-screen"), $("sets-screen"), $("quiz-screen"), $("results-screen")];
+const letters = ["ก", "ข", "ค", "ง"];
+let selectedChapter = chapters[0];
+let selectedSetIndex = 0;
+let activeItems = [];
+let currentIndex = 0;
+let answers = [];
+let missedItems = [];
+let attemptMode = "set";
+
+function showScreen(screen) {
+  for (const item of screens) item.hidden = item !== screen;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderChapters() {
+  const list = $("chapter-list");
+  list.replaceChildren();
+  for (const chapter of chapters) {
+    const card = document.createElement("div");
+    card.className = "chapter-card";
+    const index = document.createElement("span");
+    index.className = "chapter-index";
+    index.textContent = chapter.code;
+    const copy = document.createElement("span");
+    const name = document.createElement("span");
+    name.className = "chapter-name";
+    name.textContent = chapter.title;
+    const meta = document.createElement("span");
+    meta.className = "chapter-meta";
+    meta.textContent = `${chapter.meta} · ${chapter.sets.length} ชุด · ${chapter.sets.reduce((total, set) => total + set.length, 0)} ข้อ`;
+    copy.append(name, meta);
+    const actions = document.createElement("span");
+    actions.className = "chapter-card-actions";
+    const readButton = document.createElement("button");
+    readButton.type = "button";
+    readButton.className = "chapter-action chapter-action-read";
+    readButton.textContent = "อ่านสรุป";
+    readButton.addEventListener("click", () => {
+      selectedChapter = chapter;
+      showReading();
+    });
+    const quizButton = document.createElement("button");
+    quizButton.type = "button";
+    quizButton.className = "chapter-action chapter-action-quiz";
+    quizButton.textContent = "ทำข้อสอบ ↗";
+    quizButton.addEventListener("click", () => {
+      selectedChapter = chapter;
+      showSets();
+    });
+    actions.append(readButton, quizButton);
+    card.append(index, copy, actions);
+    list.append(card);
+  }
+}
+
+function showReading() {
+  const note = readingNotes[chapters.indexOf(selectedChapter)];
+  $("reading-title").textContent = selectedChapter.title;
+  $("reading-lead").textContent = note.lead;
+  $("reading-source").textContent = `สรุปจาก ${note.source}`;
+  const toc = $("reading-toc");
+  const sections = $("reading-sections");
+  toc.replaceChildren();
+  sections.replaceChildren();
+  note.sections.forEach((section, index) => {
+    const id = `reading-section-${index + 1}`;
+    const link = document.createElement("button");
+    link.type = "button";
+    link.className = "reading-toc-link";
+    link.textContent = `${String(index + 1).padStart(2, "0")}  ${section.title}`;
+    link.addEventListener("click", () => $(id).scrollIntoView({ behavior: "smooth", block: "start" }));
+    toc.append(link);
+
+    const article = document.createElement("article");
+    article.className = "reading-section";
+    article.id = id;
+    const eyebrow = document.createElement("div");
+    eyebrow.className = "reading-section-meta";
+    eyebrow.textContent = `${String(index + 1).padStart(2, "0")} / ${section.pages}`;
+    const heading = document.createElement("h3");
+    heading.textContent = section.title;
+    article.append(eyebrow, heading);
+    section.paragraphs.forEach((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      article.append(paragraph);
+    });
+    if (section.bullets?.length) {
+      const bullets = document.createElement("ul");
+      section.bullets.forEach((text) => {
+        const item = document.createElement("li");
+        item.textContent = text;
+        bullets.append(item);
+      });
+      article.append(bullets);
+    }
+    if (section.code) {
+      const caption = document.createElement("div");
+      caption.className = "reading-code-caption";
+      caption.textContent = "ตัวอย่างเสริมเพื่ออธิบายแนวคิดจากสไลด์";
+      const pre = document.createElement("pre");
+      const code = document.createElement("code");
+      code.textContent = section.code;
+      pre.append(code);
+      article.append(caption, pre);
+    }
+    if (section.tip) {
+      const tip = document.createElement("div");
+      tip.className = "reading-tip";
+      tip.textContent = `จำไว้: ${section.tip}`;
+      article.append(tip);
+    }
+    sections.append(article);
+  });
+  const recap = $("reading-recap-list");
+  recap.replaceChildren();
+  note.recap.forEach((text) => {
+    const item = document.createElement("li");
+    item.textContent = text;
+    recap.append(item);
+  });
+  showScreen($("reading-screen"));
+}
+
+function showSets() {
+  $("sets-title").textContent = selectedChapter.title;
+  const list = $("sets-list");
+  list.replaceChildren();
+  selectedChapter.sets.forEach((set, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "set-card";
+    const top = document.createElement("span");
+    top.className = "set-card-top";
+    top.textContent = `SET ${String(index + 1).padStart(2, "0")}`;
+    const middle = document.createElement("span");
+    const title = document.createElement("span");
+    title.className = "set-card-title";
+    title.textContent = `ชุดที่ ${index + 1}`;
+    const meta = document.createElement("span");
+    meta.className = "set-card-meta";
+    meta.textContent = `${set.length} ข้อ · รู้ผลทันทีทุกข้อ`;
+    middle.append(title, meta);
+    const arrow = document.createElement("span");
+    arrow.className = "set-card-arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    button.append(top, middle, arrow);
+    button.addEventListener("click", () => startSet(index));
+    list.append(button);
+  });
+  showScreen($("sets-screen"));
+}
+
+function startSet(index) {
+  selectedSetIndex = index;
+  attemptMode = "set";
+  activeItems = selectedChapter.sets[index].map((question, questionIndex) => ({ question, number: questionIndex + 1 }));
+  startAttempt();
+}
+
+function startWrongOnly() {
+  if (missedItems.length === 0) return;
+  attemptMode = "retry";
+  activeItems = missedItems.slice();
+  startAttempt();
+}
+
+function startAttempt() {
+  currentIndex = 0;
+  answers = Array(activeItems.length).fill(null);
+  $("chapter-side-name").textContent = `${selectedChapter.title.toUpperCase()} · ชุด ${selectedSetIndex + 1}${attemptMode === "retry" ? " · ข้อที่ผิด" : ""}`;
+  $("count-total").textContent = activeItems.length;
+  $("progress-track").setAttribute("aria-valuemax", String(activeItems.length));
+  showScreen($("quiz-screen"));
+  renderQuestion();
+}
+
+function answeredCount() {
+  return answers.filter((answer) => answer !== null).length;
+}
+
+function renderPalette() {
+  const palette = $("question-palette");
+  palette.replaceChildren();
+  activeItems.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "palette-button";
+    if (answers[index] !== null) button.classList.add(answers[index] === item.question.answer ? "answered-correct" : "answered-wrong");
+    if (index === currentIndex) button.classList.add("current");
+    button.textContent = String(item.number);
+    button.setAttribute("aria-label", `ไปข้อ ${item.number}${answers[index] !== null ? " ตอบแล้ว" : " ยังไม่ตอบ"}`);
+    if (index === currentIndex) button.setAttribute("aria-current", "step");
+    button.addEventListener("click", () => {
+      currentIndex = index;
+      renderQuestion();
+    });
+    palette.append(button);
+  });
+}
+
+function renderQuestion() {
+  const item = activeItems[currentIndex];
+  const question = item.question;
+  const done = answeredCount();
+  $("current-count").textContent = String(currentIndex + 1).padStart(2, "0");
+  $("question-number").textContent = attemptMode === "retry" ? `ข้อ ${item.number} ของชุด · ฝึกข้อผิด ${currentIndex + 1}/${activeItems.length}` : `ข้อ ${item.number} จาก ${activeItems.length}`;
+  $("question-topic").textContent = question.topic;
+  $("question-text").textContent = question.text;
+  $("answered-count").textContent = done;
+  $("progress-track").setAttribute("aria-valuenow", String(done));
+  $("progress-fill").style.width = `${(done / activeItems.length) * 100}%`;
+  $("prev-button").disabled = currentIndex === 0;
+  $("next-button").disabled = currentIndex === activeItems.length - 1;
+  $("submit-button").disabled = done !== activeItems.length;
+  $("submit-hint").textContent = done === activeItems.length ? "ตอบครบแล้ว ดูสรุปคะแนนได้เลย" : `ตอบแล้ว ${done}/${activeItems.length} ข้อ · เหลือ ${activeItems.length - done} ข้อ`;
+
+  const list = $("answer-list");
+  list.replaceChildren();
+  question.options.forEach((option, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer";
+    if (answers[currentIndex] !== null) {
+      button.disabled = true;
+      if (index === question.answer) button.classList.add("correct");
+      else if (index === answers[currentIndex]) button.classList.add("wrong");
+      else button.classList.add("faded");
+    }
+    button.setAttribute("aria-pressed", answers[currentIndex] === index ? "true" : "false");
+    const letter = document.createElement("span");
+    letter.className = "answer-letter";
+    letter.textContent = letters[index];
+    const content = document.createElement("span");
+    content.textContent = option;
+    button.append(letter, content);
+    button.addEventListener("click", () => {
+      if (answers[currentIndex] !== null) return;
+      answers[currentIndex] = index;
+      renderQuestion();
+    });
+    list.append(button);
+  });
+  renderFeedback(item, answers[currentIndex]);
+  renderPalette();
+}
+
+function renderFeedback(item, selectedAnswer) {
+  const panel = $("answer-feedback");
+  panel.replaceChildren();
+  panel.hidden = selectedAnswer === null;
+  if (selectedAnswer === null) return;
+
+  const question = item.question;
+  const isCorrect = selectedAnswer === question.answer;
+  panel.classList.toggle("wrong", !isCorrect);
+  const heading = document.createElement("strong");
+  heading.textContent = isCorrect ? "ถูกต้อง!" : "ยังไม่ถูก ลองอ่านคำอธิบายนี้";
+  panel.append(heading);
+  if (!isCorrect) {
+    const selected = document.createElement("p");
+    selected.textContent = `ตัวเลือกที่กด: ${question.options[selectedAnswer]} — ${describeWrongOption(question.options[selectedAnswer], question)}`;
+    const correct = document.createElement("p");
+    correct.textContent = `คำตอบที่ถูก: ${question.options[question.answer]}`;
+    panel.append(selected, correct);
+  }
+  const reason = document.createElement("p");
+  reason.textContent = `เหตุผล: ${question.explanation}`;
+  panel.append(reason);
+}
+
+const optionMeanings = [
+  [/^HTML$/i, "HTML ใช้กำหนดโครงสร้างและเนื้อหาของเว็บเพจ"],
+  [/^CSS$/i, "CSS ใช้กำหนดรูปแบบ สี และการจัดวางของเว็บเพจ"],
+  [/^JavaScript$/i, "JavaScript เพิ่มพฤติกรรมและการโต้ตอบให้หน้าเว็บ"],
+  [/^Cookie$/i, "Cookie เป็นข้อมูลขนาดเล็กที่เว็บไซต์เก็บไว้ในเบราว์เซอร์"],
+  [/^null$/i, "null คือการระบุว่าไม่มีค่าโดยตั้งใจ"],
+  [/^undefined$/i, "undefined คือค่าของตัวแปรที่ยังไม่ได้รับการกำหนดค่า"],
+  [/^NaN$/i, "NaN ย่อมาจาก Not a Number เกิดเมื่อผลลัพธ์ไม่ใช่ค่าตัวเลขที่ใช้ได้"],
+  [/^true$/i, "true คือค่าตรรกะที่หมายถึงเงื่อนไขเป็นจริง"],
+  [/^false$/i, "false คือค่าตรรกะที่หมายถึงเงื่อนไขเป็นเท็จ"],
+  [/^pending$/i, "pending คือสถานะเริ่มต้นของ Promise ที่ยังไม่สำเร็จหรือผิดพลาด"],
+  [/^fulfilled$/i, "fulfilled คือสถานะของ Promise เมื่อทำงานสำเร็จ"],
+  [/^rejected$/i, "rejected คือสถานะของ Promise เมื่อทำงานล้มเหลว"],
+  [/^global$/i, "global scope คือขอบเขตที่โค้ดส่วนต่าง ๆ ของหน้าเว็บเข้าถึงตัวแปรได้"],
+  [/^local/i, "local scope จำกัดการใช้ตัวแปรอยู่ในฟังก์ชันหรือบริบทที่ประกาศ"],
+  [/^constructor$/i, "constructor คือเมธอดที่ทำงานตอนสร้าง object ใหม่จาก class"],
+  [/^instance$/i, "instance คือ object ที่สร้างจาก class"],
+  [/^callback$/i, "callback คือ function ที่ส่งให้โค้ดอื่นเรียกเมื่อถึงเหตุการณ์หรือเวลาที่กำหนด"],
+  [/^selector$/i, "selector คือรูปแบบที่ใช้เลือก element เช่น .class หรือ #id"],
+  [/^module$/i, "module เป็นหน่วยโค้ด JavaScript ที่มี scope ของตัวเอง"],
+  [/^document node$/i, "document node แทนเอกสาร HTML ทั้งฉบับ"],
+  [/^element node$/i, "element node แทนแท็ก HTML เช่น <p> หรือ <h1>"],
+  [/^text node$/i, "text node แทนข้อความที่อยู่ภายใน element"],
+  [/^attribute node$/i, "attribute node แทนคุณสมบัติในแท็ก เช่น id หรือ class"],
+  [/^comment node$/i, "comment node แทน comment ในเอกสาร"],
+  [/^siblings$/i, "siblings คือ nodes ที่มี parent เดียวกัน"],
+  [/^Map$/i, "Map เก็บข้อมูลเป็นคู่ key-value และใช้ค่าหลายชนิดเป็น key ได้"],
+  [/^WeakMap$/i, "WeakMap เก็บข้อมูลแบบ key-value โดยไม่ให้การอ้างอิง key ขัดขวางการเก็บกวาดหน่วยความจำ"],
+  [/^Set$/i, "Set เป็นชุดค่าที่ไม่ซ้ำกัน"],
+  [/^Promise$/i, "Promise แทนผลลัพธ์ของงานที่อาจสำเร็จหรือผิดพลาดภายหลัง"],
+  [/console\.log\(/i, "console.log() เขียนค่าลง console สำหรับดูผลหรือช่วยตรวจโปรแกรม"],
+  [/getElementById\(/i, "getElementById() เลือก element ด้วยค่า id"],
+  [/querySelectorAll\(/i, "querySelectorAll() เลือกทุก element ที่ตรงกับ CSS selector"],
+  [/querySelector\(/i, "querySelector() เลือก element ตัวแรกที่ตรงกับ CSS selector"],
+  [/getElementsByClassName\(/i, "getElementsByClassName() เลือกกลุ่ม element ตามชื่อ class"],
+  [/getElementsByTagName\(/i, "getElementsByTagName() เลือกกลุ่ม element ตามชื่อแท็ก"],
+  [/createTextNode\(/i, "createTextNode() สร้าง node ข้อความ"],
+  [/createElement\(/i, "createElement() สร้าง element ใหม่"],
+  [/appendChild\(/i, "appendChild() เพิ่ม node เป็นลูกท้ายสุดของ parent"],
+  [/removeChild\(/i, "removeChild() ลบ child node ออกจาก parent"],
+  [/setAttribute\(/i, "setAttribute() กำหนดค่า attribute ของ element"],
+  [/addEventListener\(/i, "addEventListener() ผูกฟังก์ชันให้ทำงานเมื่อ event เกิดขึ้น"],
+  [/\.innerHTML/i, "innerHTML อ่านหรือกำหนดเนื้อหา HTML ภายใน element"],
+  [/\.textContent/i, "textContent อ่านหรือกำหนดข้อความของ node"],
+  [/\.value/i, "value คือค่าที่อยู่ใน form control เช่นช่อง input"],
+  [/\.pop\(/i, "pop() นำสมาชิกตัวท้ายออกจาก array และคืนค่านั้น"],
+  [/\.push\(/i, "push() เพิ่มสมาชิกที่ท้าย array"],
+  [/\.forEach\(/i, "forEach() เรียกฟังก์ชันหนึ่งครั้งต่อสมาชิกแต่ละตัว"],
+  [/\.flatMap\(/i, "flatMap() map สมาชิกแล้วคลี่ array ผลลัพธ์หนึ่งระดับ"],
+  [/\.map\(/i, "map() สร้าง array ใหม่จากผลการเรียกฟังก์ชันกับสมาชิกทุกตัว"],
+  [/\.filter\(/i, "filter() สร้าง array ใหม่จากสมาชิกที่ผ่านเงื่อนไข"],
+  [/\.flat\(/i, "flat() คลี่ array ที่ซ้อนกัน"],
+  [/\.includes\(/i, "includes() ตรวจว่ามีค่านั้นอยู่และคืน Boolean"],
+  [/\.findLastIndex\(/i, "findLastIndex() คืน index ของสมาชิกที่พบจากการค้นย้อนท้าย array"],
+  [/\.findLast\(/i, "findLast() คืนสมาชิกที่พบจากการค้นย้อนท้าย array"],
+  [/\.findIndex\(/i, "findIndex() คืน index ตัวแรกที่ผ่านเงื่อนไข"],
+  [/\.find\(/i, "find() คืนสมาชิกตัวแรกที่ผ่านเงื่อนไข"],
+  [/\.indexOf\(/i, "indexOf() ค้นหา index แรกของค่าที่ระบุ"],
+  [/Object\.entries\(/i, "Object.entries() คืนคู่ key-value เป็น array"],
+  [/Object\.values\(/i, "Object.values() คืนค่าของ properties เป็น array"],
+  [/Object\.fromEntries\(/i, "Object.fromEntries() สร้าง object ใหม่จากคู่ key-value"],
+  [/Object\.hasOwn\(/i, "Object.hasOwn() ตรวจว่า object มี property นั้นเองหรือไม่"],
+  [/Array\.isArray\(/i, "Array.isArray() ตรวจว่าค่าที่ให้เป็น array หรือไม่"],
+  [/Number\.parseInt\(/i, "Number.parseInt() อ่านจำนวนเต็มจากข้อความ"],
+  [/Number\.parseFloat\(/i, "Number.parseFloat() อ่านเลขทศนิยมจากข้อความ"],
+  [/Math\.PI/i, "Math.PI เป็น property เก็บค่าประมาณของ π"],
+  [/Math\.pow\(/i, "Math.pow(x,y) คำนวณ x ยกกำลัง y"],
+  [/\.charAt\(/i, "charAt() อ่านอักขระตาม index"],
+  [/\.split\(/i, "split() แยก string เป็น array ตามตัวคั่น"],
+  [/\.substring\(/i, "substring() ตัดส่วนของ string ตามตำแหน่ง"],
+  [/\.repeat\(/i, "repeat() ทำซ้ำ string ตามจำนวนครั้งที่กำหนด"],
+  [/\.padStart\(/i, "padStart() เติมข้อความด้านหน้าจนถึงความยาวเป้าหมาย"],
+  [/\.padEnd\(/i, "padEnd() เติมข้อความด้านหลังจนถึงความยาวเป้าหมาย"],
+  [/\.trimStart\(/i, "trimStart() ลบช่องว่างด้านหน้าข้อความ"],
+  [/\.trimEnd\(/i, "trimEnd() ลบช่องว่างด้านท้ายข้อความ"],
+  [/\.replaceAll\(/i, "replaceAll() แทนที่ข้อความที่ตรงกันทุกตำแหน่ง"],
+  [/\.matchAll\(/i, "matchAll() ค้นหา regex matches ทั้งหมดในข้อความ"],
+  [/\.then\(/i, ".then() รับผลเมื่อ Promise สำเร็จ และอาจรับฟังก์ชันจัดการ error"],
+  [/\.catch\(/i, ".catch() จัดการกรณี Promise ถูก reject"],
+  [/\.finally\(/i, ".finally() ผูกงานหลัง Promise เสร็จ"],
+  [/^break$/i, "break ออกจาก loop หรือ switch ที่กำลังทำงาน"],
+  [/^continue$/i, "continue ข้ามส่วนที่เหลือของรอบปัจจุบัน แล้วไปยังรอบถัดไป"],
+  [/^default$/i, "default เป็นกรณีของ switch เมื่อไม่มี case ใดตรง"],
+  [/^extends$/i, "extends ใช้ระบุว่า class หนึ่งสืบทอดจากอีก class"],
+  [/^super$/i, "super ใช้เรียก constructor หรือส่วนของ superclass"],
+  [/^new$/i, "new ใช้สร้าง object จาก constructor หรือ class"],
+  [/^onclick$/i, "onclick เกิดเมื่อผู้ใช้คลิก element"],
+  [/^onmouseover$/i, "onmouseover เกิดเมื่อเมาส์เข้าเขต element"],
+  [/^onmouseout$/i, "onmouseout เกิดเมื่อเมาส์ออกจาก element"],
+  [/^onmousedown$/i, "onmousedown เกิดเมื่อกดปุ่มเมาส์ลง"],
+  [/^onmouseup$/i, "onmouseup เกิดเมื่อปล่อยปุ่มเมาส์"],
+  [/^onkeydown$/i, "onkeydown เกิดเมื่อกดปุ่มบนแป้นพิมพ์ลง"],
+  [/^onkeyup$/i, "onkeyup เกิดเมื่อปล่อยปุ่มบนแป้นพิมพ์"],
+  [/^onfocus$/i, "onfocus เกิดเมื่อ element ได้รับ focus"],
+  [/^onload$/i, "onload เกิดเมื่อ element โหลดเสร็จ"],
+  [/^onsubmit$/i, "onsubmit เกิดเมื่อส่ง form"],
+  [/^var$/i, "var ใช้ประกาศตัวแปรแบบ function scope และประกาศซ้ำได้"],
+  [/^let$/i, "let ใช้ประกาศตัวแปรแบบ block scope ที่กำหนดค่าใหม่ได้"],
+  [/^const$/i, "const ใช้ประกาศตัวแปรแบบ block scope ที่กำหนดค่าใหม่ให้ตัวแปรเดิมไม่ได้"],
+  [/^pop\(\)$/i, "pop() นำสมาชิกท้ายสุดออกจาก array และคืนค่านั้น"],
+  [/^indexOf\(\)$/i, "indexOf() ค้นหาตำแหน่งแรกของค่าที่ระบุ"],
+  [/^forEach\(\)$/i, "forEach() เรียกฟังก์ชันหนึ่งครั้งต่อสมาชิกแต่ละตัว"],
+  [/^trimStart\(\)$/i, "trimStart() ลบช่องว่างหน้าข้อความ"],
+  [/^repeat\(\)$/i, "repeat() ทำซ้ำข้อความตามจำนวนครั้งที่กำหนด"],
+  [/^includes\(\)$/i, "includes() ตรวจว่ามีค่าหรือข้อความที่ระบุหรือไม่"],
+  [/^Math\.abs$/i, "Math.abs() หาค่าสัมบูรณ์ของตัวเลข"],
+  [/^Math\.round$/i, "Math.round() ปัดตัวเลขเป็นจำนวนเต็มที่ใกล้ที่สุด"]
+];
+
+function describeWrongOption(option, question) {
+  const value = option.trim();
+  for (const [pattern, meaning] of optionMeanings) {
+    if (pattern.test(value)) return meaning;
+  }
+  if (/^-?\d+(?:\.\d+)?$/.test(value)) return `${value} เป็นตัวเลือกค่าตัวเลข แต่เมื่อไล่คำสั่งหรือเงื่อนไขตามโจทย์จะได้ค่าอื่น`;
+  if (/^(?:\".*\"|'.*')$/.test(value)) return `${value} เป็นตัวเลือกผลลัพธ์ชนิดข้อความ แต่ยังไม่ตรงกับผลที่โค้ดให้`;
+  if (/^\[.*\]$/.test(value)) return "ตัวเลือกนี้แสดงผลลัพธ์แบบ array แต่สมาชิกหรือลำดับยังไม่ตรงกับการทำงานจริง";
+  if (/^\{.*\}$/.test(value)) return "ตัวเลือกนี้แสดงข้อมูลแบบ object หรือ set แต่สมาชิกยังไม่ตรงกับโจทย์";
+  if (/^<[^>]+>$/.test(value)) return "ตัวเลือกนี้เป็นแท็ก HTML ซึ่งมีหน้าที่ต่างจากสิ่งที่โจทย์ถาม";
+  return `ข้อนี้สื่อว่า “${value}” แต่กรณีในโจทย์ต้องพิจารณาว่า ${question.explanation}`;
+}
+
+function submitAnswers() {
+  if (answeredCount() !== activeItems.length) return;
+  missedItems = activeItems.filter((item, index) => answers[index] !== item.question.answer);
+  const score = activeItems.length - missedItems.length;
+  const percentage = Math.round((score / activeItems.length) * 100);
+  $("final-score").textContent = score;
+  $("final-total").textContent = activeItems.length;
+  $("result-chapter").textContent = `${selectedChapter.title} · ชุด ${selectedSetIndex + 1}${attemptMode === "retry" ? " · รอบแก้ข้อผิด" : ""}`;
+  $("score-percent").textContent = `${percentage}% CORRECT`;
+  $("score-bar-fill").style.width = `${percentage}%`;
+  $("result-message").textContent = missedItems.length === 0 ? "ตอบถูกครบทุกข้อในรอบนี้แล้ว!" : attemptMode === "retry" ? `แก้ถูก ${score} ข้อ เหลือ ${missedItems.length} ข้อให้ฝึกต่อ` : `ตอบถูก ${score} จาก ${activeItems.length} ข้อ กดฝึกเฉพาะข้อที่ผิดได้ทันที`;
+  $("retry-wrong-button").hidden = missedItems.length === 0;
+  $("review-count").textContent = `${missedItems.length} ข้อ`;
+
+  const list = $("review-list");
+  list.replaceChildren();
+  if (missedItems.length === 0) {
+    const message = document.createElement("p");
+    message.className = "review-empty";
+    message.textContent = "ไม่มีข้อที่ผิดในรอบนี้";
+    list.append(message);
+  }
+  activeItems.forEach((item, index) => {
+    if (answers[index] === item.question.answer) return;
+    const question = item.question;
+    const card = document.createElement("div");
+    card.className = "review-item";
+    const id = document.createElement("div");
+    id.className = "review-id";
+    id.textContent = `QUESTION ${String(item.number).padStart(2, "0")} · ${question.topic}`;
+    const title = document.createElement("p");
+    title.textContent = question.text;
+    const yourAnswer = document.createElement("div");
+    yourAnswer.className = "review-user-answer";
+    yourAnswer.textContent = `ที่ตอบ: ${question.options[answers[index]]}`;
+    const meaning = document.createElement("div");
+    meaning.className = "review-meaning";
+    meaning.textContent = `ตัวเลือกที่ตอบหมายถึง: ${describeWrongOption(question.options[answers[index]], question)}`;
+    const correctAnswer = document.createElement("div");
+    correctAnswer.className = "review-answer";
+    correctAnswer.textContent = `คำตอบที่ถูก: ${question.options[question.answer]}`;
+    const reason = document.createElement("div");
+    reason.className = "review-reason";
+    reason.textContent = `เหตุผล: ${question.explanation}`;
+    card.append(id, title, yourAnswer, meaning, correctAnswer, reason);
+    list.append(card);
+  });
+  showScreen($("results-screen"));
+}
+
+renderChapters();
+$("reading-back-button").addEventListener("click", () => showScreen($("intro-screen")));
+$("reading-quiz-button").addEventListener("click", showSets);
+$("reading-bottom-quiz-button").addEventListener("click", showSets);
+$("sets-reading-button").addEventListener("click", showReading);
+$("results-reading-button").addEventListener("click", showReading);
+$("back-chapters-button").addEventListener("click", () => showScreen($("intro-screen")));
+$("prev-button").addEventListener("click", () => { if (currentIndex > 0) { currentIndex--; renderQuestion(); } });
+$("next-button").addEventListener("click", () => { if (currentIndex < activeItems.length - 1) { currentIndex++; renderQuestion(); } });
+$("submit-button").addEventListener("click", submitAnswers);
+$("retry-wrong-button").addEventListener("click", startWrongOnly);
+$("restart-button").addEventListener("click", () => startSet(selectedSetIndex));
+$("sets-button").addEventListener("click", showSets);
+$("brand-link").addEventListener("click", (event) => { event.preventDefault(); showScreen($("intro-screen")); });
+
+</script>
+</body>
+</html>
